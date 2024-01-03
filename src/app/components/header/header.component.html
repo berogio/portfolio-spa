@@ -1,0 +1,16 @@
+<!-- header.component.html -->
+
+<header>
+    <nav>
+        <div class="logo">
+            <a routerLink="/">Mein Portfolio</a>
+        </div>
+        <div class="nav-links">
+            <a routerLink="/skills" (click)="scrollToSection('skills')">Skills</a>
+            <a routerLink="/experience" (click)="scrollToSection('experience')">Experience</a>
+            <a routerLink="/about" (click)="scrollToSection('about')">About</a>
+            <a routerLink="/contact" (click)="scrollToSection('contact')">Contact</a>
+        </div>
+
+    </nav>
+</header>
