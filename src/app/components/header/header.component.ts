@@ -26,7 +26,6 @@ export class HeaderComponent implements AfterViewInit {
   }
 
   scrollToSection(section: string): void {
-    console.log('gio');
     const element = document.getElementById(section);
     if (element) {
       element.scrollIntoView({

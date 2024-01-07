@@ -2,16 +2,16 @@
 
 <section class="contact" id="contact">
     <h2>Contact Me</h2>
-    <div class="contact-form">
+    <form class="contact-form" [formGroup]="ContactForm" (ngSubmit)="submitForm()">
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Your name">
+        <input type="text" formControlName="name">
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="Your email">
+        <input type="email" formControlName="email">
 
         <label for="message">Message:</label>
-        <textarea id="message" name="message" placeholder="Your message"></textarea>
+        <textarea formControlName="message"></textarea>
 
         <button type="submit">Send Message</button>
-    </div>
+    </form>
 </section>

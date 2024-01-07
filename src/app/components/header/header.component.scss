@@ -1,0 +1,35 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #333;
+  /* Hintergrundfarbe anpassen */
+}
+
+.logo img {
+  max-width: 100%;
+  /* Das Logo wird nicht über den Header hinausgehen */
+  height: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  /* Textfarbe anpassen */
+}
+
+.action-button {
+  background-color: #4caf50;
+  /* Hintergrundfarbe anpassen */
+  color: #fff;
+  /* Textfarbe anpassen */
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
