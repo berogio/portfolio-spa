@@ -2,34 +2,134 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  background-color: #333;
-  /* Hintergrundfarbe anpassen */
+  button {
+    background-color: black;
+    height: 56px;
+    width: 153px;
+    color: white;
+    border-radius: 10px;
+    font-size: larger;
+    font-weight: 500;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+    &:hover {
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+    }
+  }
+  .material-symbols-outlined {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+  }
 }
 
-.logo img {
-  max-width: 100%;
-  /* Das Logo wird nicht über den Header hinausgehen */
-  height: auto;
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  min-width: 150px;
+  justify-content: space-between;
+  cursor: pointer;
+  p {
+    font-weight: 800;
+    font-size: 1.3rem;
+    font-family: sans-serif;
+  }
 }
 
 .nav-links {
+  font-weight: 600;
+  font-size: 1.2rem;
   display: flex;
-  gap: 20px;
+  max-width: 600px;
+  justify-content: space-between;
+  a {
+    position: relative;
+    padding: 15px;
+    text-decoration: none;
+    color: black;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: black;
+      transform-origin: bottom right;
+      transform: scaleX(0);
+      transition: transform 0.3s ease-in-out;
+    }
+    &:hover::after {
+      transform-origin: bottom left;
+      transform: scaleX(1);
+    }
+  }
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: #fff;
-  /* Textfarbe anpassen */
+.burger-menu {
+  display: none;
+  .material-symbols-outlined {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: transform 2s ease;
+    overflow: hidden;
+    transition: height 0.8s ease-in-out;
+    /* Animation für die Höhe */
+    animation: slideIn 0.8s ease-in-out;
+    a {
+      padding: 15px;
+      text-decoration: none;
+      color: white;
+      font-size: 1.2rem;
+      transition: background-color 0.3s ease-in-out;
+      &:hover {
+        background-color: #555;
+      }
+    }
+  }
+  &.open {
+    .material-symbols-outlined {
+      transform: rotate(90deg);
+    }
+    .mobile-nav {
+      transform: scaleY(1);
+    }
+  }
 }
 
-.action-button {
-  background-color: #4caf50;
-  /* Hintergrundfarbe anpassen */
-  color: #fff;
-  /* Textfarbe anpassen */
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
+@keyframes slideIn {
+  from {
+    transform: translateY(-120px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .burger-menu {
+    display: block;
+  }
+  .nav-links {
+    display: none;
+  }
+  .action-button {
+    display: none;
+  }
 }

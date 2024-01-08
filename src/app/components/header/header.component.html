@@ -1,14 +1,23 @@
-<!-- header.component.html -->
-
 <header>
-    <div class="logo">
-        <img src="dein_logo_path" alt="Logo">
+    <div class="logo-wrapper">
+        <img src="/assets/images/Vector.png" alt="Logo">
+        <p>Personal</p>
     </div>
+
     <div class="nav-links">
-        <a routerLink="/skills" (click)="scrollToSection('skills')">Skills</a>
-        <a routerLink="/experience" (click)="scrollToSection('experience')">Experience</a>
-        <a routerLink="/about" (click)="scrollToSection('about')">About</a>
-        <a routerLink="/contact" (click)="scrollToSection('contact')">Contact</a>
+        <ng-container *ngFor="let link of navLinks">
+            <a routerLink="{{ link.routerLink }}" (click)="scrollToSection(link.section)">{{ link.label }}</a>
+        </ng-container>
     </div>
-    <button class="action-button">Action</button>
+
+    <button class="action-button">Resume<span class="material-symbols-outlined">download</span></button>
+
+    <div class="burger-menu">
+        <span class="material-symbols-outlined" (click)="toggleMenu()">menu</span>
+        <div class="mobile-nav" *ngIf="isMenuOpen">
+            <ng-container *ngFor="let link of navLinks">
+                <a routerLink="{{ link.routerLink }}" (click)="scrollToSection(link.section)">{{ link.label }}</a>
+            </ng-container>
+        </div>
+    </div>
 </header>
