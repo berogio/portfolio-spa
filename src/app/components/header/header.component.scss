@@ -4,8 +4,8 @@ header {
   align-items: center;
   button {
     background-color: black;
-    height: 56px;
-    width: 153px;
+    height: 50px;
+    width: 150px;
     color: white;
     border-radius: 10px;
     font-size: larger;
@@ -41,7 +41,7 @@ header {
   font-weight: 600;
   font-size: 1.2rem;
   display: flex;
-  max-width: 600px;
+  width: 540px;
   justify-content: space-between;
   a {
     position: relative;

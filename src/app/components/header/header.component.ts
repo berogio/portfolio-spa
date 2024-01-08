@@ -21,12 +21,6 @@ export class HeaderComponent implements AfterViewInit {
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
-
-    // Hier wird die "open" Klasse basierend auf dem Menüstatus hinzugefügt oder entfernt
-    const burgerMenu = document.querySelector('.burger-menu');
-    if (burgerMenu) {
-      burgerMenu.classList.toggle('open', this.isMenuOpen);
-    }
   }
 
   ngAfterViewInit() {
@@ -48,6 +42,9 @@ export class HeaderComponent implements AfterViewInit {
         block: 'start',
         inline: 'nearest',
       });
+      setTimeout(() => {
+        this.isMenuOpen = !this.isMenuOpen;
+      }, 400);
     }
   }
 }

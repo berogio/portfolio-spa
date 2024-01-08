@@ -12,7 +12,7 @@
 
     <button class="action-button">Resume<span class="material-symbols-outlined">download</span></button>
 
-    <div class="burger-menu">
+    <div class="burger-menu" [ngClass]="{ 'open': isMenuOpen }">
         <span class="material-symbols-outlined" (click)="toggleMenu()">menu</span>
         <div class="mobile-nav" *ngIf="isMenuOpen">
             <ng-container *ngFor="let link of navLinks">
