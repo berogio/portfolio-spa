@@ -15,9 +15,16 @@
     <div class="burger-menu" [ngClass]="{ 'open': isMenuOpen }">
         <span class="material-symbols-outlined" (click)="toggleMenu()">menu</span>
         <div class="mobile-nav" *ngIf="isMenuOpen">
+
             <ng-container *ngFor="let link of navLinks">
-                <a routerLink="{{ link.routerLink }}" (click)="scrollToSection(link.section)">{{ link.label }}</a>
+                <a routerLink="{{ link.routerLink }}" (click)="scrollToSection(link.section)">
+                   {{ link.label }}  <span [ngClass]="link.icon">{{link.iconName}}</span>
+                
+                </a>
+
             </ng-container>
+
         </div>
     </div>
+
 </header>

@@ -11,10 +11,36 @@ export class HeaderComponent implements AfterViewInit {
   @ViewChild('navbar', { static: true }) private navbar!: ElementRef;
   isMenuOpen = false;
   navLinks = [
-    { label: 'Skills', routerLink: '/skills', section: 'skills' },
-    { label: 'Experience', routerLink: '/experience', section: 'experience' },
-    { label: 'About Me', routerLink: '/about', section: 'about' },
-    { label: 'Contact Me', routerLink: '/contact', section: 'contact' },
+    {
+      label: 'Skills',
+      routerLink: '/skills',
+      section: 'skills',
+      icon: 'material-symbols-outlined',
+
+      iconName: 'star_half',
+    },
+    {
+      label: 'Experience',
+      routerLink: '/experience',
+      section: 'experience',
+      icon: 'material-symbols-outlined',
+
+      iconName: ' settings',
+    },
+    {
+      label: 'About Me',
+      routerLink: '/about',
+      section: 'about',
+      icon: 'material-symbols-outlined',
+      iconName: 'face',
+    },
+    {
+      label: 'Contact Me',
+      routerLink: '/contact',
+      section: 'contact',
+      icon: 'material-symbols-outlined',
+      iconName: 'phone_enabled',
+    },
   ];
 
   constructor(private router: Router, private route: ActivatedRoute) {}

@@ -77,8 +77,11 @@ header {
     transition: transform 0.3s ease;
   }
   .mobile-nav {
+    border-top: 3px solid rgb(77, 152, 152);
+    border-bottom: 3px solid rgb(77, 152, 152);
     display: flex;
     flex-direction: column;
+    padding: 5px;
     background-color: #333;
     position: absolute;
     top: 70px;
@@ -87,19 +90,24 @@ header {
     z-index: 1;
     transform-origin: top;
     transform: scaleY(0);
-    transition: transform 2s ease;
+    transition: transform 0.5s ease;
     overflow: hidden;
-    transition: height 0.8s ease-in-out;
-    /* Animation für die Höhe */
-    animation: slideIn 0.8s ease-in-out;
+    animation: slideIn 1s;
     a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       padding: 15px;
       text-decoration: none;
-      color: white;
+      color: rgb(77, 152, 152);
       font-size: 1.2rem;
-      transition: background-color 0.3s ease-in-out;
+      position: relative;
       &:hover {
         background-color: #555;
+      }
+      span {
+        margin-left: 10px;
+        color: rgb(77, 152, 152);
       }
     }
   }
