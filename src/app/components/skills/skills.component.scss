@@ -1,0 +1,19 @@
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-item {
+  border: 3px black solid;
+  margin: 10px;
+  height: 180px;
+  flex-basis: 17%;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+@media (max-width: 1024px) {
+  .flex-item {
+    flex-basis: 30%;
+  }
+}
