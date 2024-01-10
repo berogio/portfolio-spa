@@ -1,50 +1,71 @@
-// // Apply basic styles to the form
-// .contact {
-//   text-align: center;
-//   padding: 40px;
-//   background-color: #f8f8f8;
-//   // Style the heading
-//   h2 {
-//     color: #333;
-//   }
-//   // Style the form container
-//   .contact-form {
-//     max-width: 400px;
-//     margin: 0 auto;
-//     // Style form elements
-//     label,
-//     input,
-//     textarea,
-//     button {
-//       display: block;
-//       margin-bottom: 16px;
-//     }
-//     // Style the form labels
-//     label {
-//       color: #555;
-//     }
-//     // Style the form input fields
-//     input,
-//     textarea {
-//       width: 100%;
-//       padding: 10px;
-//       border: 1px solid #ccc;
-//       border-radius: 4px;
-//       box-sizing: border-box;
-//     }
-//     // Style the form button
-//     button {
-//       background-color: #4caf50;
-//       color: #fff;
-//       padding: 12px 20px;
-//       border: none;
-//       border-radius: 4px;
-//       cursor: pointer;
-//       font-size: 16px;
-//       // Style the button on hover
-//       &:hover {
-//         background-color: #45a049;
-//       }
-//     }
-//   }
-// }
+.contact-form {
+  padding: 5px 0px;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+}
+
+label {
+  margin-bottom: 8px;
+}
+
+input,
+textarea {
+  padding: 8px;
+  margin-bottom: 16px;
+}
+
+.invalid-input {
+  border: 1px solid red;
+}
+
+.icon-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  width: 170px;
+}
+
+.contact-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+button {
+  width: 200px;
+  height: 30px;
+}
+
+.icon-container > * {
+  filter: brightness(1%);
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+}
+
+.icon-container > *:hover {
+  filter: none;
+  cursor: pointer;
+}
+
+.fb {
+  background-image: url("../../../assets/images/instagram.svg");
+}
+
+.you {
+  background-image: url("../../../assets/images/facebook.svg");
+}
+
+.twi {
+  background-image: url("../../../assets/images/twitter.svg");
+}
+
+.pin {
+  background-image: url("../../../assets/images/pinterest.svg");
+}
+
+.ins {
+  background-image: url("../../../assets/images/instagram.svg");
+}

@@ -1,17 +1,25 @@
 <!-- contact.component.html -->
 
 <section class="contact" id="contact">
-    <h2>Contact Me</h2>
-    <form class="contact-form" [formGroup]="ContactForm" (ngSubmit)="submitForm()">
-        <label for="name">Name:</label>
-        <input type="text" formControlName="name">
 
-        <label for="email">Email:</label>
-        <input type="email" formControlName="email">
+    <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="submitForm()">
 
-        <label for="message">Message:</label>
-        <textarea formControlName="message"></textarea>
 
-        <button type="submit">Send Message</button>
+        <input type="text" placeholder="Name" formControlName="name" [ngClass]="{ 'invalid-input': contactForm.get('name')?.invalid && contactForm.get('name')?.touched }">
+
+
+        <input type="email" placeholder="Email" formControlName="email" [ngClass]="{ 'invalid-input': contactForm.get('email')?.invalid && contactForm.get('email')?.touched }">
+
+
+        <textarea placeholder="Message" formControlName="message" [ngClass]="{ 'invalid-input': contactForm.get('message')?.invalid && contactForm.get('message')?.touched }"></textarea>
+        <div class="contact-wrapper">
+            <button type="submit" [disabled]="contactForm.invalid">Send Message</button>
+            <div class="icon-container">
+                <span class="you"></span>
+                <span class="twi"></span>
+                <span class="pin"></span>
+                <span class="ins"></span>
+            </div>
+        </div>
     </form>
 </section>

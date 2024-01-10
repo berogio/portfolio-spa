@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -7,14 +12,22 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent {
-  ContactForm: FormGroup;
-  constructor() {
-    this.ContactForm = new FormGroup({
-      name: new FormControl(''),
-      email: new FormControl(''),
-      message: new FormControl(''),
+  contactForm!: FormGroup; // Non-null Assertion Operator
+
+  constructor(private fb: FormBuilder) {
+    this.initForm();
+  }
+
+  private initForm() {
+    this.contactForm = this.fb.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      message: ['', Validators.required],
     });
   }
 
-  submitForm() {}
+  submitForm() {
+    // Hier kannst du die Logik für die Formularübermittlung hinzufügen
+    // z.B., das Senden der Daten an einen Server
+  }
 }
