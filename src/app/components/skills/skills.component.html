@@ -3,45 +3,105 @@
 
 
     <div class="flex-container">
-        <div class="flex-item">
-            <img src="/assets/images/icon-javscript.png" alt="icon-javscript">
-            <p>Javascript</p>
+
+        <div class="flex-item" [class.rotated]="isRotated[0]" (click)="rotateDiv(0)">
+            <div class="front-text" [class.hidden]="isRotated[0]">
+                <img src="/assets/images/icon-javscript.png" alt="icon-javscript">
+                <p>Javascript</p>
+            </div>
+            <div class="back-text" [class.hidden]="!isRotated[0]">
+                <p class="rotated-text">"Versatile language for interactive web pages. Controls browsers dynamically, processes user interactions, and updates page content.</p>
+            </div>
         </div>
-        <div class="flex-item">
-            <img src="/assets/images/icon-typescript.png" alt="icon-typescript">
-            <p>Typescript</p>
+
+        <div class="flex-item" [class.rotated]="isRotated[1]" (click)="rotateDiv(1)">
+            <div class="front-text" [class.hidden]="isRotated[1]">
+                <img src="/assets/images/icon-typescript.png" alt="icon-typescript">
+                <p>Typescript</p>
+            </div>
+            <div class="back-text" [class.hidden]="!isRotated[1]">
+                <p class="rotated-text">JavaScript superset with static typing for clear and error-resistant code. Ideal for efficient and scalable development</p>
+            </div>
         </div>
-        <div class="flex-item">
-            <img src="/assets/images/icon-sass.png" alt="icon-sass">
-            <p>SCSS/SASS</p>
+
+        <div class="flex-item" [class.rotated]="isRotated[2]" (click)="rotateDiv(2)">
+            <div class="front-text" [class.hidden]="isRotated[2]">
+                <img src="/assets/images/icon-sass.png" alt="icon-sass">
+                <p>SCSS/SASS</p>
+            </div>
+            <div class="back-text" [class.hidden]="!isRotated[2]">
+                <p class="rotated-text">CSS preprocessor with variables, nested selectors, and mixins. Simplifies stylesheet creation through structured, extensible syntax</p>
+            </div>
         </div>
-        <div class="flex-item">
-            <img src="/assets/images/icon-git.png" alt="icon-git">
-            <p>Git/Github</p>
+        <div class="flex-item" [class.rotated]="isRotated[3]" (click)="rotateDiv(3)">
+            <div class="front-text" [class.hidden]="isRotated[3]">
+                <img src="/assets/images/icon-git.png" alt="icon-git">
+                <p>Git/Github</p>
+            </div>
+            <div class="back-text" [class.hidden]="!isRotated[3]">
+                <p class="rotated-text">Web platform for Git version control. Enables collaborative software development, tracking code changes seamlessly.</p>
+            </div>
         </div>
-        <div class="flex-item">
-            <img src="/assets/images/icon-express.png" alt="icon-express">
-            <p>Express</p>
+
+        <div class="flex-item" [class.rotated]="isRotated[4]" (click)="rotateDiv(4)">
+            <div class="front-text" [class.hidden]="isRotated[4]">
+                <img src="/assets/images/icon-express.png" alt="icon-express">
+                <p>Express</p>
+            </div>
+            <div class="back-text" [class.hidden]="!isRotated[4]">
+                <p class="rotated-text">Minimalist Node.js web framework. Streamlines robust and scalable server-side app development, popular for APIs and web apps</p>
+            </div>
+
         </div>
-        <div class="flex-item">
-            <img src="/assets/images/icon-mongodb.png" alt="icon-mongodb">
-            <p>MognoDB</p>
+
+        <div class="flex-item" [class.rotated]="isRotated[5]" (click)="rotateDiv(5)">
+            <div class="front-text" [class.hidden]="isRotated[5]">
+                <img src="/assets/images/icon-mongodb.png" alt="icon-mongodb">
+                <p>MognoDB</p>
+            </div>
+            <div class="back-text" [class.hidden]="!isRotated[5]">
+                <p class="rotated-text">NoSQL document-oriented database providing flexible, JSON-like data storage. Popular choice for modern, scalable applications.</p>
+            </div>
         </div>
-        <div class="flex-item">
-            <img src="../../../assets/images/icon-nodejs.svg" alt="icon-nodejs">
-            <p>NodeJS</p>
+
+        <div class="flex-item" [class.rotated]="isRotated[6]" (click)="rotateDiv(6)">
+            <div class="front-text" [class.hidden]="isRotated[6]">
+                <img src="../../../assets/images/icon-nodejs.svg" alt="icon-nodejs">
+                <p>NodeJS</p>
+            </div>
+            <div class="back-text" [class.hidden]="!isRotated[6]">
+                <p class="rotated-text">Server-side JavaScript platform for scalable, efficient backend applications outside the browser.</p>
+            </div>
         </div>
-        <div class="flex-item">
-            <img src="/assets/images/icon-postgresql.png" alt="icon-postgresql">
-            <p>PostGreSQL</p>
+
+        <div class="flex-item" [class.rotated]="isRotated[7]" (click)="rotateDiv(7)">
+            <div class="front-text" [class.hidden]="isRotated[7]">
+                <img src="/assets/images/icon-postgresql.png" alt="icon-postgresql">
+                <p>PostGreSQL</p>
+            </div>
+            <div class="back-text" [class.hidden]="!isRotated[7]">
+                <p class="rotated-text">Open-source relational database management system known for scalability and robust features. Widely used in diverse applications</p>
+            </div>
         </div>
-        <div class="flex-item">
-            <img src="/assets/images/icon-tailwindcss.png" alt="icon-tailwindcss">
-            <p>Tailwindcss</p>
+
+        <div class="flex-item" [class.rotated]="isRotated[8]" (click)="rotateDiv(8)">
+            <div class="front-text" [class.hidden]="isRotated[8]">
+                <img src="/assets/images/icon-tailwindcss.png" alt="icon-tailwindcss">
+                <p>Tailwindcss</p>
+            </div>
+            <div class="back-text" [class.hidden]="!isRotated[8]">
+                <p class="rotated-text">CSS framework with low-level utility classes. Enables efficient and highly customizable UI creation directly in the markup.</p>
+            </div>
         </div>
-        <div class="flex-item">
-            <img src="/assets/images/icon-nest.svg" alt="icon-nest">
-            <p>Nest JS</p>
+
+        <div class="flex-item" [class.rotated]="isRotated[9]" (click)="rotateDiv(9)">
+            <div class="front-text" [class.hidden]="isRotated[9]">
+                <img src="/assets/images/icon-nest.svg" alt="icon-nest">
+                <p>Nest JS</p>
+            </div>
+            <div class="back-text" [class.hidden]="!isRotated[9]">
+                <p class="rotated-text">"NestJS: A powerful Node.js framework for server-side development, combining TypeScript/JavaScript flexibility.</p>
+            </div>
         </div>
     </div>
 </div>
