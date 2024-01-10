@@ -1,3 +1,10 @@
+.skills-component-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
 .flex-container {
   display: flex;
   flex-wrap: wrap;
@@ -10,6 +17,16 @@
   flex-basis: 17%;
   flex-grow: 1;
   flex-shrink: 1;
+}
+
+.my-font {
+  font-weight: 400;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.skills-font {
+  font-weight: 900;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 @media (max-width: 1024px) {
