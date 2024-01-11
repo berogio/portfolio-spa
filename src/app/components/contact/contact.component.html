@@ -1,25 +1,33 @@
-<!-- contact.component.html -->
-
 <section class="contact" id="contact">
-
-    <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="submitForm()">
-
-
-        <input type="text" placeholder="Name" formControlName="name" [ngClass]="{ 'invalid-input': contactForm.get('name')?.invalid && contactForm.get('name')?.touched }">
+    <div>
+        <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="submitForm()">
 
 
-        <input type="email" placeholder="Email" formControlName="email" [ngClass]="{ 'invalid-input': contactForm.get('email')?.invalid && contactForm.get('email')?.touched }">
+            <input type="text" placeholder="Name" formControlName="name" [ngClass]="{ 'invalid-input': contactForm.get('name')?.invalid && contactForm.get('name')?.touched }">
 
 
-        <textarea placeholder="Message" formControlName="message" [ngClass]="{ 'invalid-input': contactForm.get('message')?.invalid && contactForm.get('message')?.touched }"></textarea>
-        <div class="contact-wrapper">
-            <button type="submit" [disabled]="contactForm.invalid">Send Message</button>
-            <div class="icon-container">
-                <span class="you"></span>
-                <span class="twi"></span>
-                <span class="pin"></span>
-                <span class="ins"></span>
+            <input type="email" placeholder="Email" formControlName="email" [ngClass]="{ 'invalid-input': contactForm.get('email')?.invalid && contactForm.get('email')?.touched }">
+
+
+            <textarea placeholder="Message" formControlName="message" [ngClass]="{ 'invalid-input': contactForm.get('message')?.invalid && contactForm.get('message')?.touched }"></textarea>
+            <div class="contact-wrapper">
+                <button type="submit" [disabled]="contactForm.invalid">Send Message</button>
+                <div class="icon-container">
+                    <span class="you"></span>
+                    <span class="twi"></span>
+                    <span class="pin"></span>
+                    <span class="ins"></span>
+                </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
+    <div class="conntact-info-wrapper">
+        <span>Let's </span><span class="highlight">talk</span><span> for Something special</span>
+        <p>
+            I seek to push the limits of creativity<br> to create high-engaging, user-friendly, and<br> memorable interactive experiences.
+        </p>
+        <p><a href="mailto:Gberi2012@agruni.edu.ge">Gberi2012@agruni.edu.ge</a></p>
+        <p>+49 176 60350188</p>
+    </div>
+
 </section>
