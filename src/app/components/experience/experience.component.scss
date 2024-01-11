@@ -20,12 +20,13 @@ section {
 }
 
 .experience {
+  box-shadow: 0 3px 15px rgba(255, 255, 255, 0.388);
   border: 1px solid rgba(255, 255, 255, 0.426);
   border-radius: 10px;
   background-color: black;
   color: rgba(255, 255, 255, 0.713);
-  padding: 15px;
-  margin-bottom: 15px;
+  padding: 30px;
+  margin-bottom: 65px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   .s-wrapper {
