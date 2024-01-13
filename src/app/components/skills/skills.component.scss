@@ -65,6 +65,8 @@
 .rotated,
 .rotated-text {
   transform: rotateY(180deg);
+  font-size: medium !important;
+  color: darkgrey;
   span {
     transform: rotate(360deg);
     transition: 3s;
