@@ -4,6 +4,8 @@
   justify-content: space-between;
   align-items: center;
   background-color: black;
+  border: 1px solid rgba(255, 255, 255, 0.237);
+  box-shadow: 0 14px 18px rgba(244, 241, 241, 0.601);
 }
 
 .card,
@@ -12,7 +14,6 @@
   flex: 0 0 calc(50% - 20px);
   margin: 10px;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: white;
   overflow: hidden;
 }
@@ -85,4 +86,14 @@
   .card img {
     width: 100%;
   }
+  .text2 {
+    display: none;
+  }
+  .text3 {
+    display: block !important;
+  }
+}
+
+.text3 {
+  display: none;
 }
