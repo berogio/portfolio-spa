@@ -13,6 +13,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MyProjectsComponent } from './components/my-projects/my-projects.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AboutComponent,
     ContactComponent,
     FooterComponent,
+    MyProjectsComponent,
   ],
   imports: [BrowserModule, RouterModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],

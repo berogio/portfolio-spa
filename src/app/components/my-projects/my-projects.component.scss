@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  background-color: black;
+  align-items: center;
+}
+
+.card,
+.text {
+  background-color: black;
+  flex: 0 0 calc(50% - 20px);
+  /* 50% Breite mit 20px Abstand zwischen den Elementen */
+  margin: 10px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.card img {
+  width: 99%;
+  height: auto;
+  /* Damit das Bild seine Proportionen beibehält */
+  border-radius: 4px;
+  display: block;
+  /* Entfernt die untere Lücke bei Inline-Elementen */
+}
+
+/* Media Query für Responsivität */
+
+@media (max-width: 768px) {
+  .card,
+  .text {
+    flex: 1 0 95%;
+  }
+}

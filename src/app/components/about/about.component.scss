@@ -1,0 +1,19 @@
+.about {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-around;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.about-text-wrapper {
+  max-width: 500px;
+  span {
+    font-weight: 100;
+  }
+  p {
+    font-size: large;
+  }
+}
