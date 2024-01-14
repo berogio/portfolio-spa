@@ -50,7 +50,7 @@ export class SkillsComponent {
         'NoSQL document-oriented database providing flexible, JSON-like data storage. Popular choice for modern, scalable applications.',
     },
     {
-      icon: '../../../assets/images/icon-nodejs.svg',
+      icon: '/assets/images/icon-nodejs.svg',
       name: 'NodeJS',
       description:
         'Server-side JavaScript platform for scalable, efficient backend applications outside the browser.',
@@ -68,7 +68,7 @@ export class SkillsComponent {
         'NestJS: A powerful Node.js framework for server-side development, combining TypeScript/JavaScript flexibility.',
     },
     {
-      icon: '../../../assets/images/ang.png',
+      icon: '/assets/images/ang.png',
       name: 'Angular',
       description:
         'CSS framework with low-level utility classes. Enables efficient and highly customizable UI creation directly in the markup.',
