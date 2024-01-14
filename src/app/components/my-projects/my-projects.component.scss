@@ -29,21 +29,6 @@
   max-height: 400px;
   scrollbar-width: thin;
   scrollbar-color: #333 #555;
-}
-
-.text::-webkit-scrollbar {
-  width: 8px;
-}
-
-.text::-webkit-scrollbar-thumb {
-  background-color: #333;
-}
-
-.text::-webkit-scrollbar-track {
-  background-color: #555;
-}
-
-.text {
   h1 {
     color: #3498db;
     font-family: "Arial", sans-serif;
@@ -80,12 +65,27 @@
   }
 }
 
+.text::-webkit-scrollbar {
+  width: 8px;
+}
+
+.text::-webkit-scrollbar-thumb {
+  background-color: #333;
+}
+
+.text::-webkit-scrollbar-track {
+  background-color: #555;
+}
+
 @media (max-width: 768px) {
   .card,
   .text {
     flex: 1 0 95%;
   }
   .text {
+    width: 100%;
+  }
+  .card img {
     width: 100%;
   }
 }
