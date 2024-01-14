@@ -2,37 +2,90 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: stretch;
-  background-color: black;
   align-items: center;
+  background-color: black;
 }
 
 .card,
 .text {
   background-color: black;
   flex: 0 0 calc(50% - 20px);
-  /* 50% Breite mit 20px Abstand zwischen den Elementen */
   margin: 10px;
   padding: 20px;
-  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: white;
+  overflow: hidden;
 }
 
 .card img {
-  width: 99%;
+  width: 85%;
   height: auto;
-  /* Damit das Bild seine Proportionen beibehält */
-  border-radius: 4px;
+  border-radius: 18px;
   display: block;
-  /* Entfernt die untere Lücke bei Inline-Elementen */
 }
 
-/* Media Query für Responsivität */
+.text {
+  overflow-y: auto;
+  max-height: 400px;
+  scrollbar-width: thin;
+  scrollbar-color: #333 #555;
+}
+
+.text::-webkit-scrollbar {
+  width: 8px;
+}
+
+.text::-webkit-scrollbar-thumb {
+  background-color: #333;
+}
+
+.text::-webkit-scrollbar-track {
+  background-color: #555;
+}
+
+.text {
+  h1 {
+    color: #3498db;
+    font-family: "Arial", sans-serif;
+    font-size: 32px;
+  }
+  h2 {
+    color: #2ecc71;
+    font-family: "Helvetica", sans-serif;
+    font-size: 36px;
+  }
+  p {
+    color: #555;
+    font-family: "Verdana", sans-serif;
+    font-size: 16px;
+  }
+  ul {
+    color: #27ae60;
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  a {
+    color: #3498db;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
 
 @media (max-width: 768px) {
   .card,
   .text {
     flex: 1 0 95%;
+  }
+  .text {
+    width: 100%;
   }
 }
