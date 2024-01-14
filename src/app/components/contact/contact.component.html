@@ -1,28 +1,13 @@
 <div class="card-container">
-    <div class="card">
-        <img src="/assets/images/Ellipse 2664.png" alt="Bildbeschreibung 1" class="card-img-top">
+    <div class="card" *ngFor="let card of cards">
+        <img [src]="card.imageUrl" [alt]="card.altText" class="card-img-top">
         <div class="card-body">
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p class="card-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="/assets/images/Ellipse 26644.png" alt="Bildbeschreibung 2" class="card-img-top">
-        <div class="card-body">
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p class="card-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="/assets/images/Ellipse 2664.png" alt="Bildbeschreibung 3" class="card-img-top">
-        <div class="card-body">
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p class="card-text">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            <p class="card-text">{{ card.text1 }}</p>
+            <p class="card-text">{{ card.text2 }}</p>
         </div>
     </div>
 </div>
+
 
 <section class="contact" id="contact">
     <div>

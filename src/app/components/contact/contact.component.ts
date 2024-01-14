@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+interface Card {
+  imageUrl: string;
+  altText: string;
+  text1: string;
+  text2: string;
+}
 
 @Component({
   selector: 'app-contact',
@@ -12,7 +14,31 @@ import {
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent {
-  contactForm!: FormGroup; // Non-null Assertion Operator
+  contactForm!: FormGroup;
+  cards: Card[] = [
+    {
+      imageUrl: '/assets/images/Ellipse 2664.png',
+      altText: 'Bildbeschreibung 1',
+      text1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      text2:
+        'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
+    },
+    {
+      imageUrl: '/assets/images/Ellipse 26644.png',
+      altText: 'Bildbeschreibung 2',
+      text1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      text2:
+        'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
+    },
+    {
+      imageUrl: '/assets/images/Ellipse 2664.png',
+      altText: 'Bildbeschreibung 3',
+      text1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      text2:
+        'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
+    },
+    // Weitere Karten hier hinzufügen
+  ];
 
   constructor(private fb: FormBuilder) {
     this.initForm();
