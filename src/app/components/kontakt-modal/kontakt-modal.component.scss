@@ -16,3 +16,41 @@
   font-size: 18px;
   color: #a20d4b;
 }
+
+.icon-container {
+  display: flex;
+  justify-content: space-around;
+  width: 170px;
+}
+
+.icon-container > * {
+  filter: brightness(50%);
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+}
+
+.icon-container > *:hover {
+  filter: none;
+  cursor: pointer;
+}
+
+.fb {
+  background-image: url("../../../assets/images/instagram.svg");
+}
+
+.you {
+  background-image: url("../../../assets/images/facebook.svg");
+}
+
+.twi {
+  background-image: url("../../../assets/images/twitter.svg");
+}
+
+.pin {
+  background-image: url("../../../assets/images/pinterest.svg");
+}
+
+.ins {
+  background-image: url("../../../assets/images/instagram.svg");
+}

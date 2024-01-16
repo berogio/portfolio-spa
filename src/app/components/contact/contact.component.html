@@ -8,7 +8,6 @@
     </div>
 </div>
 
-
 <section class="contact" id="contact">
     <div>
         <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="submitForm()">
@@ -23,12 +22,7 @@
             <textarea placeholder="Message" formControlName="message" [ngClass]="{ 'invalid-input': contactForm.get('message')?.invalid && contactForm.get('message')?.touched }"></textarea>
             <div class="contact-wrapper">
                 <button type="submit" [disabled]="contactForm.invalid">Send Message</button>
-                <div class="icon-container">
-                    <span class="you"></span>
-                    <span class="twi"></span>
-                    <span class="pin"></span>
-                    <span class="ins"></span>
-                </div>
+
             </div>
         </form>
     </div>

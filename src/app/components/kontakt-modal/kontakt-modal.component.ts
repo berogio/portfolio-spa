@@ -12,4 +12,7 @@ export class KontaktModalComponent {
   submitForm() {
     throw new Error('Method not implemented.');
   }
+  redirectToExternalUrl(url: string): void {
+    window.open(url, '_blank');
+  }
 }
