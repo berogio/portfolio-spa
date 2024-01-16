@@ -1,10 +1,16 @@
 # Portfolio README
 
+### Features 📋
+
+⚡️ Fully Responsive
+⚡️ Valid HTML5 & SCSS
+⚡️ Easy to modify
+
 ## Overview
 
 Welcome to my portfolio project! This Angular-based portfolio is designed to showcase my skills, projects, and experiences in a visually appealing and user-friendly manner. It's built using Angular, Node.js, Vercel, and Express, providing a dynamic and responsive platform to present my work.
 
-## Getting Started
+## Getting Started 📦
 
 Follow these steps to set up and run the project locally:
 
@@ -27,7 +33,7 @@ Follow these steps to set up and run the project locally:
    ```
    Open your browser and navigate to `http://localhost:4200/` to view the portfolio. The application will automatically reload on source file changes.
 
-## Customization
+## Customization 📚
 
 Feel free to personalize the portfolio according to your preferences:
 
@@ -35,7 +41,7 @@ Feel free to personalize the portfolio according to your preferences:
 - Modify the styling and layout in the stylesheets to match your design preferences.
 - Extend or add new components as needed for additional sections or features.
 
-## Building for Production
+## Building for Production 🛠️
 
 To build the project for production, use the following command:
 
