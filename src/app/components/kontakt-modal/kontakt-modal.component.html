@@ -1,14 +1,13 @@
 <!-- contact-form-dialog.component.html -->
-<h2 mat-dialog-title>Kontaktformular</h2>
-<div mat-dialog-content>
-    <mat-form-field>
-        <input matInput placeholder="Name">
+<h2 mat-dialog-title>Kontakt
+    <mat-icon class="custom-icon">email</mat-icon>
+</h2>
+<div mat-dialog-content class="custom-dialog-content">
+    <mat-form-field class="custom-form-field">
+        <input matInput placeholder="E-Mail" class="custom-input">
     </mat-form-field>
-    <mat-form-field>
-        <input matInput placeholder="E-Mail">
-    </mat-form-field>
-    <mat-form-field>
-        <textarea matInput placeholder="Nachricht"></textarea>
+    <mat-form-field class="custom-form-field">
+        <textarea matInput placeholder="Nachricht" class="custom-input" rows="5"></textarea>
     </mat-form-field>
 </div>
 <div mat-dialog-actions>

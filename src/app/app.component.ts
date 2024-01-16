@@ -12,9 +12,9 @@ export class AppComponent {
 
   openContactFormDialog(): void {
     const dialogRef = this.dialog.open(KontaktModalComponent, {
-      width: '400px',
+      width: '310px',
+      panelClass: 'custom-container',
       position: { bottom: '100px', right: '50px' },
-      panelClass: 'custom-dialog-container',
     });
 
     dialogRef.afterClosed().subscribe((result) => {

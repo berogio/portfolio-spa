@@ -10,19 +10,16 @@ app-header {
   position: fixed;
   bottom: 16px;
   right: 16px;
-  font-size: 24px;
 }
 
 .larger-icon-button {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   mat-icon {
     transform: scale(1.5);
   }
 }
 
 .mat-primary {
-  background-color: rgba(15, 8, 202, 0.968);
+  background-color: #3498db;
 }
-
-/* In der Styles-Datei der Dialog-Komponente */

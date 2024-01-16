@@ -1,15 +1,18 @@
-h2 {
-  color: #333;
-}
-
-mat-form-field {
-  width: 100%;
-  margin-bottom: 16px;
-  /* Abstand zwischen den Input-Feldern */
-}
-
-mat-dialog-actions {
+.custom-dialog-content {
   display: flex;
-  justify-content: flex-end;
-  /* Buttons rechts ausrichten */
+  flex-direction: column;
+}
+
+.custom-form-field {
+  position: relative;
+  width: 100%;
+}
+
+.custom-icon {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #a20d4b;
 }
