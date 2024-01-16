@@ -1,0 +1,17 @@
+<!-- contact-form-dialog.component.html -->
+<h2 mat-dialog-title>Kontaktformular</h2>
+<div mat-dialog-content>
+    <mat-form-field>
+        <input matInput placeholder="Name">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="E-Mail">
+    </mat-form-field>
+    <mat-form-field>
+        <textarea matInput placeholder="Nachricht"></textarea>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="closeDialog()">Abbrechen</button>
+    <button mat-button color="primary" (click)="submitForm()">Senden</button>
+</div>

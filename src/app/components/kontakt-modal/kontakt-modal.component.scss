@@ -1,0 +1,15 @@
+h2 {
+  color: #333;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 16px;
+  /* Abstand zwischen den Input-Feldern */
+}
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  /* Buttons rechts ausrichten */
+}

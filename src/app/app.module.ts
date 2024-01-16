@@ -17,6 +17,9 @@ import { MyProjectsComponent } from './components/my-projects/my-projects.compon
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+import { KontaktModalComponent } from './components/kontakt-modal/kontakt-modal.component';
+import { MatInputModule } from '@angular/material/input';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +30,7 @@ import { MatIconModule } from '@angular/material/icon';
     ContactComponent,
     FooterComponent,
     MyProjectsComponent,
+    KontaktModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +39,9 @@ import { MatIconModule } from '@angular/material/icon';
     RouterModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    MatDialogModule,
+    MatInputModule,
+
     BrowserAnimationsModule,
   ],
   providers: [],
