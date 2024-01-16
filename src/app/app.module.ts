@@ -14,6 +14,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MyProjectsComponent } from './components/my-projects/my-projects.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { MyProjectsComponent } from './components/my-projects/my-projects.compon
     FooterComponent,
     MyProjectsComponent,
   ],
-  imports: [BrowserModule, RouterModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [BrowserModule, RouterModule, AppRoutingModule, ReactiveFormsModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
