@@ -9,9 +9,11 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-weight: 900;
+    min-width: 130px;
     p {
-      margin-left: 10px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      font-family: sans-serif;
     }
   }
   .footer-content {
