@@ -29,7 +29,7 @@ export class SkillsComponent {
       icon: '/assets/images/icon-sass.png',
       name: 'SCSS/SASS',
       description:
-        'CSS preprocessor with variables, nested selectors, and mixins. Simplifies stylesheet creation through structured, extensible syntax.',
+        'CSS preprocessor, nested selectors, and mixins. Simplifies stylesheet creation through structured, extensible syntax.',
     },
     {
       icon: '/assets/images/icon-git.png',
@@ -41,7 +41,7 @@ export class SkillsComponent {
       icon: '/assets/images/icon-express.png',
       name: 'Express',
       description:
-        'Minimalist Node.js web framework. Streamlines robust and scalable server-side app development, popular for APIs and web apps.',
+        'Node.js web framework. scalable server-side app development, popular for APIs and web apps.',
     },
     {
       icon: '/assets/images/icon-mongodb.png',
@@ -59,7 +59,7 @@ export class SkillsComponent {
       icon: '/assets/images/icon-postgresql.png',
       name: 'PostGreSQL',
       description:
-        'Open-source relational database management system known for scalability and robust features. Widely used in diverse applications.',
+        'Open-source relational database management system known for scalability and robust features.',
     },
     {
       icon: '/assets/images/icon-nest.svg',
