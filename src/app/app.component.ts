@@ -5,4 +5,8 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {}
+export class AppComponent {
+  openContactFormDialog() {
+    throw new Error('Method not implemented.');
+  }
+}

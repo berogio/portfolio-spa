@@ -5,3 +5,22 @@ app-header {
   opacity: 1;
   z-index: 1000;
 }
+
+.fixed-bottom-right {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  font-size: 24px;
+}
+
+.larger-icon-button {
+  width: 80px;
+  height: 80px;
+  mat-icon {
+    transform: scale(1.5);
+  }
+}
+
+.mat-primary {
+  background-color: rgba(15, 8, 202, 0.968);
+}
