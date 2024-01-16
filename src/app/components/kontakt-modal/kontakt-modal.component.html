@@ -1,8 +1,7 @@
 <h2 mat-dialog-title>
-    Kontakt
+    Contact
     <mat-icon class="custom-icon">email</mat-icon>
 </h2>
-
 <div mat-dialog-content class="custom-dialog-content">
     <mat-form-field class="custom-form-field">
         <input matInput placeholder="E-Mail" class="custom-input">
@@ -17,8 +16,7 @@
         <span class="ins" (click)="redirectToExternalUrl('https://www.instagram.com/berogioo/')"></span>
     </div>
 </div>
-
 <div mat-dialog-actions>
-    <button mat-button (click)="closeDialog()">Abbrechen</button>
-    <button mat-button color="primary" (click)="submitForm()">Senden</button>
+    <button mat-button (click)="closeDialog()">Cancel</button>
+    <button mat-button color="primary" (click)="submitForm()">Send</button>
 </div>

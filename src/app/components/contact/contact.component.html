@@ -7,18 +7,11 @@
         </div>
     </div>
 </div>
-
 <section class="contact" id="contact">
     <div>
         <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="submitForm()">
-
-
             <input type="text" placeholder="Name" formControlName="name" [ngClass]="{ 'invalid-input': contactForm.get('name')?.invalid && contactForm.get('name')?.touched }">
-
-
             <input type="email" placeholder="Email" formControlName="email" [ngClass]="{ 'invalid-input': contactForm.get('email')?.invalid && contactForm.get('email')?.touched }">
-
-
             <textarea placeholder="Message" formControlName="message" [ngClass]="{ 'invalid-input': contactForm.get('message')?.invalid && contactForm.get('message')?.touched }"></textarea>
             <div class="contact-wrapper">
                 <button type="submit" [disabled]="contactForm.invalid">Send Message</button>
@@ -34,5 +27,4 @@
         <p><a href="mailto:Gberi2012@agruni.edu.ge">Gberi2012@agruni.edu.ge</a></p>
         <p>+49 176 60350188</p>
     </div>
-
 </section>

@@ -23,8 +23,6 @@
   }
 }
 
-/* Füge diese Klasse für die Hervorhebung hinzu */
-
 .highlight {
   color: #3498db;
   font-weight: bold;
@@ -45,13 +43,6 @@ textarea {
   border: 1px solid red;
 }
 
-.icon-container {
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-around;
-  width: 170px;
-}
-
 .contact-wrapper {
   display: flex;
   align-items: center;
@@ -61,38 +52,6 @@ textarea {
 button {
   width: 200px;
   height: 30px;
-}
-
-.icon-container > * {
-  filter: brightness(1%);
-  background-repeat: no-repeat;
-  width: 30px;
-  height: 30px;
-}
-
-.icon-container > *:hover {
-  filter: none;
-  cursor: pointer;
-}
-
-.fb {
-  background-image: url("../../../assets/images/instagram.svg");
-}
-
-.you {
-  background-image: url("../../../assets/images/facebook.svg");
-}
-
-.twi {
-  background-image: url("../../../assets/images/twitter.svg");
-}
-
-.pin {
-  background-image: url("../../../assets/images/pinterest.svg");
-}
-
-.ins {
-  background-image: url("../../../assets/images/instagram.svg");
 }
 
 .card-container {
