@@ -62,10 +62,10 @@ export class SkillsComponent {
         'Open-source relational database management system known for scalability and robust features.',
     },
     {
-      icon: '/assets/images/icon-nest.svg',
-      name: 'Nest JS',
+      icon: '/assets/images/NGINX-1.svg',
+      name: 'NginX',
       description:
-        'NestJS: A powerful Node.js framework for server-side development, combining TypeScript/JavaScript flexibility.',
+        'Nginx: High-performance web server and reverse proxy with efficiency and scalability.',
     },
     {
       icon: '/assets/images/ang.png',
