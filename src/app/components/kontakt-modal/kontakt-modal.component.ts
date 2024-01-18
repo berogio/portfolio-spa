@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-kontakt-modal',
@@ -6,12 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./kontakt-modal.component.scss'],
 })
 export class KontaktModalComponent {
-  closeDialog() {
-    throw new Error('Method not implemented.');
+  constructor(private dialogRef: MatDialogRef<KontaktModalComponent>) {}
+
+  closeDialog(): void {
+    this.dialogRef.close();
   }
-  submitForm() {
-    throw new Error('Method not implemented.');
-  }
+
+  submitForm() {}
+
   redirectToExternalUrl(url: string): void {
     window.open(url, '_blank');
   }

@@ -39,13 +39,6 @@ export class HeaderComponent implements AfterViewInit {
       icon: 'material-symbols-outlined',
       iconName: 'face',
     },
-    // {
-    //   label: 'Contact Me',
-    //   routerLink: '/contact',
-    //   section: 'contact',
-    //   icon: 'material-symbols-outlined',
-    //   iconName: 'phone_enabled',
-    // },
   ];
 
   constructor(private router: Router, private route: ActivatedRoute) {}
