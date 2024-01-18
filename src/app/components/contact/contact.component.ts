@@ -37,7 +37,6 @@ export class ContactComponent {
       text2:
         'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
     },
-    // Weitere Karten hier hinzufügen
   ];
 
   constructor(private fb: FormBuilder) {
@@ -52,8 +51,5 @@ export class ContactComponent {
     });
   }
 
-  submitForm() {
-    // Hier kannst du die Logik für die Formularübermittlung hinzufügen
-    // z.B., das Senden der Daten an einen Server
-  }
+  submitForm() {}
 }
