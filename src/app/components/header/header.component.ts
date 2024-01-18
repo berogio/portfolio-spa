@@ -26,19 +26,26 @@ export class HeaderComponent implements AfterViewInit {
       iconName: ' settings',
     },
     {
+      label: 'Projects',
+      routerLink: '/projects',
+      section: 'my-projects',
+      icon: 'material-symbols-outlined',
+      iconName: 'phone_enabled',
+    },
+    {
       label: 'About Me',
       routerLink: '/about',
       section: 'about',
       icon: 'material-symbols-outlined',
       iconName: 'face',
     },
-    {
-      label: 'Contact Me',
-      routerLink: '/contact',
-      section: 'contact',
-      icon: 'material-symbols-outlined',
-      iconName: 'phone_enabled',
-    },
+    // {
+    //   label: 'Contact Me',
+    //   routerLink: '/contact',
+    //   section: 'contact',
+    //   icon: 'material-symbols-outlined',
+    //   iconName: 'phone_enabled',
+    // },
   ];
 
   constructor(private router: Router, private route: ActivatedRoute) {}

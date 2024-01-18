@@ -9,6 +9,7 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { MyProjectsComponent } from './components/my-projects/my-projects.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'experience', component: ExperienceComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'projects', component: MyProjectsComponent },
 ];
 
 @NgModule({
