@@ -26,7 +26,7 @@ export class ExperienceComponent {
       position: 'Junior Developer',
       year: '2022-2023',
       description:
-        "As a Senior Software Engineer at Google, I played a pivotal role in developing innovative solutions for Google's core search algorithms. Collaborating with a dynamic team of engineers, I contributed to the enhancement of search accuracy and efficiency, optimizing user experiences for millions of users worldwide. As a Senior Software Engineer at Google, I played a pivotal role in developing innovative solutions for Google's core search algorithms. Collaborating with a dynamic team of engineers, I contributed to the enhancement of search accuracy and efficiency, optimizing user experiences for millions of users worldwide.",
+        'As a Junior Developer from 2022 to 2023 at betlive.com, I had the opportunity to work as a software engineer, contributing to the development of innovative solutions for the online casino`s software platform. Collaborating with a dynamic team of developers, I played a role in optimizing the performance and efficiency of the platform to ensure an outstanding user experience for players worldwide. My responsibilities included continuously improving functionality and adapting to the evolving requirements of the online gambling industry. During my time at betlive.com, I was able to continually expand and apply my skills as a Junior Developer.',
     },
     {
       logo: '/assets/images/upwork.png',
