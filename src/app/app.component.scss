@@ -26,7 +26,8 @@ app-header {
 }
 
 main {
-  border: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
   max-width: 1500px;
   margin: 0 auto;
   background-color: rgba(255, 255, 255, 0.93);
