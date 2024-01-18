@@ -3,18 +3,20 @@
     <mat-icon class="custom-icon">email</mat-icon>
 </h2>
 <div mat-dialog-content class="custom-dialog-content">
-    <mat-form-field class="custom-form-field">
-        <input matInput placeholder="E-Mail" class="custom-input">
-    </mat-form-field>
-    <mat-form-field class="custom-form-field">
-        <textarea matInput placeholder="Nachricht" class="custom-input" rows="5"></textarea>
-    </mat-form-field>
-    <div class="icon-container">
-        <span class="you" (click)="redirectToExternalUrl('https://www.linkedin.com/in/giorgi-beridze-427902238/')"></span>
-        <span class="twi" (click)="redirectToExternalUrl('https://www.linkedin.com/in/giorgi-beridze-427902238/')"></span>
-        <span class="pin" (click)="redirectToExternalUrl('https://www.linkedin.com/in/giorgi-beridze-427902238/')"></span>
-        <span class="ins" (click)="redirectToExternalUrl('https://www.instagram.com/berogioo/')"></span>
-    </div>
+    <form [formGroup]="contactForm">
+        <mat-form-field class="custom-form-field">
+            <input matInput placeholder="E-Mail" class="custom-input" formControlName="email">
+            <mat-error *ngIf="contactForm.get('email')?.hasError('required')">E-Mail is required</mat-error>
+            <mat-error *ngIf="contactForm.get('email')?.hasError('email')">Invalid E-Mail format</mat-error>
+        </mat-form-field>
+        <mat-form-field class="custom-form-field">
+            <textarea matInput placeholder="Nachricht" class="custom-input" rows="5" formControlName="message"></textarea>
+            <mat-error *ngIf="contactForm.get('message')?.hasError('required')">Message is required</mat-error>
+            <mat-error *ngIf="contactForm.get('message')?.hasError('minlength')">Message must be at least 10 characters</mat-error>
+        </mat-form-field>
+        <div class="icon-container">
+        </div>
+    </form>
 </div>
 <div mat-dialog-actions>
     <button mat-button (click)="closeDialog()">Cancel</button>
