@@ -15,6 +15,10 @@
             <mat-error *ngIf="contactForm.get('message')?.hasError('minlength')">Message must be at least 10 characters</mat-error>
         </mat-form-field>
         <div class="icon-container">
+            <span class="you" (click)="redirectToExternalUrl('https://www.linkedin.com/in/giorgi-beridze-427902238/')"></span>
+            <span class="twi" (click)="redirectToExternalUrl('https://www.linkedin.com/in/giorgi-beridze-427902238/')"></span>
+            <span class="pin" (click)="redirectToExternalUrl('https://www.linkedin.com/in/giorgi-beridze-427902238/')"></span>
+            <span class="ins" (click)="redirectToExternalUrl('https://www.instagram.com/berogioo/')"></span>
         </div>
     </form>
 </div>
