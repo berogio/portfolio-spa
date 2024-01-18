@@ -16,7 +16,6 @@ export class HeaderComponent implements AfterViewInit {
       routerLink: '/skills',
       section: 'skills',
       icon: 'material-symbols-outlined',
-
       iconName: 'star_half',
     },
     {
@@ -24,7 +23,6 @@ export class HeaderComponent implements AfterViewInit {
       routerLink: '/experience',
       section: 'experience',
       icon: 'material-symbols-outlined',
-
       iconName: ' settings',
     },
     {
