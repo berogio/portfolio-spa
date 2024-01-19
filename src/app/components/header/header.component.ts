@@ -9,7 +9,6 @@ import { filter } from 'rxjs/operators';
 })
 export class HeaderComponent implements AfterViewInit {
   @ViewChild('navbar', { static: true }) private navbar!: ElementRef;
-
   isMenuOpen = false;
   selectedLanguage = 'EN';
   isDropdownOpen = false;
