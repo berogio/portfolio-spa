@@ -9,7 +9,11 @@ import { filter } from 'rxjs/operators';
 })
 export class HeaderComponent implements AfterViewInit {
   @ViewChild('navbar', { static: true }) private navbar!: ElementRef;
+
   isMenuOpen = false;
+  selectedLanguage = 'EN';
+  isDropdownOpen = false;
+
   navLinks = [
     {
       label: 'Skills',
@@ -70,5 +74,23 @@ export class HeaderComponent implements AfterViewInit {
         this.isMenuOpen = !this.isMenuOpen;
       }, 400);
     }
+  }
+
+  openDropdown() {
+    this.isDropdownOpen = true;
+  }
+
+  closeDropdown() {
+    this.isDropdownOpen = false;
+  }
+
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
+
+  selectLanguage(language: string) {
+    this.selectedLanguage = language.toLocaleUpperCase();
+    this.isDropdownOpen = false;
+    console.log(this.selectedLanguage);
   }
 }

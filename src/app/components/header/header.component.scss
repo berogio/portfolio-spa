@@ -144,3 +144,41 @@ header {
     display: none;
   }
 }
+
+.lang-cv-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.custom-select {
+  margin-left: 5px;
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 35px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.dropdown-options div {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.selected-option {
+  padding: 8px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+
+.custom-select:hover .dropdown-options {
+  display: block;
+}

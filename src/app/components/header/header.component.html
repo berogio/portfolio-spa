@@ -8,15 +8,30 @@
             <a routerLink="{{ link.routerLink }}" (click)="scrollToSection(link.section)">{{ link.label }}</a>
         </ng-container>
     </div>
-    <button class="action-button">Resume<span class="material-symbols-outlined">download</span></button>
-    <div class="burger-menu" [ngClass]="{ 'open': isMenuOpen }">
-        <span class="material-symbols-outlined" (click)="toggleMenu()">menu</span>
-        <div class="mobile-nav" *ngIf="isMenuOpen">
-            <ng-container *ngFor="let link of navLinks">
-                <a routerLink="{{ link.routerLink }}" (click)="scrollToSection(link.section)">
+
+    <div class="lang-cv-wrapper">
+        <button class="action-button">Resume<span class="material-symbols-outlined">download</span></button>
+        <div class="language-selection" (mouseenter)="openDropdown()" (mouseleave)="closeDropdown()">
+            <div class="custom-select">
+                <div *ngIf="isDropdownOpen" class="dropdown-options">
+                    <div (click)="selectLanguage('ge')">GE</div>
+                    <div (click)="selectLanguage('de')">DE</div>
+                    <div (click)="selectLanguage('en')">EN</div>
+                </div>
+                <div class="selected-option" (click)="toggleDropdown()">
+                    {{ selectedLanguage }}
+                </div>
+            </div>
+        </div>
+        <div class="burger-menu" [ngClass]="{ 'open': isMenuOpen }">
+            <span class="material-symbols-outlined" (click)="toggleMenu()">menu</span>
+            <div class="mobile-nav" *ngIf="isMenuOpen">
+                <ng-container *ngFor="let link of navLinks">
+                    <a routerLink="{{ link.routerLink }}" (click)="scrollToSection(link.section)">
                    {{ link.label }}  <span [ngClass]="link.icon">{{link.iconName}}</span>
                 </a>
-            </ng-container>
+                </ng-container>
+            </div>
         </div>
     </div>
 </header>
