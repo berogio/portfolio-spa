@@ -1,21 +1,114 @@
-.about {
-  padding: 20px 0;
+.contact {
   display: flex;
+  align-items: center;
   justify-content: space-around;
-  img {
-    width: 99%;
-    height: auto;
-    border-radius: 4px;
-    display: block;
+}
+
+.header {
+  font-size: 1.8rem;
+  color: #0000007c;
+  margin: 0;
+  padding: 30px;
+  span {
+    font-weight: 800;
+    color: #000000;
   }
 }
 
-.about-text-wrapper {
-  max-width: 500px;
-  span {
+.contact-form {
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.conntact-info-wrapper {
+  height: auto;
+  font-size: 1.1rem;
+  font-weight: 900;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  p:nth-child(4) {
     font-weight: 100;
+    font-size: 0.9rem;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   }
-  p {
-    font-size: large;
+}
+
+.highlight {
+  color: #3498db;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+label {
+  margin-bottom: 8px;
+}
+
+input,
+textarea {
+  padding: 8px;
+  margin-bottom: 16px;
+}
+
+.invalid-input {
+  border: 1px solid red;
+}
+
+.contact-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+button {
+  width: 200px;
+  height: 30px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 370px;
+  padding: 3%;
+  height: 400px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  width: 35%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-body {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 700px) {
+  .contact {
+    flex-direction: column;
+  }
+  .card {
+    width: 100%;
+    height: auto;
+    margin: 20px;
   }
 }

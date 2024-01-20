@@ -1,16 +1,18 @@
-<section class="about" id="about">
-    <div class="img-wrapper">
-        <img src="/assets/images/Container.png" alt="card-body">
-    </div>
-    <div class="about-text-wrapper">
-        <h1><span>About</span> me</h1>
-        <p>
-            **About Me:** I'm a passionate Frontend Developer with a solid foundation in various modern web technologies. Proficient in JavaScript and TypeScript, I specialize in crafting impressive user interfaces and interactive applications. My expertise includes:
-            - **Angular:** Experienced in developing Single-Page Applications (SPAs) and intricate user interfaces using Angular, ensuring efficient and well-structured code. - **Node.js and Express:** I leverage Node.js and the powerful Express framework
-            to build scalable and efficient backends for applications. - **MongoDB:** Skilled in utilizing MongoDB, a NoSQL database, for flexible and scalable data management. - **SCSS, CSS, and Bootstrap:** Proficient in creating appealing and user-friendly
-            designs through the use of SCSS and CSS. Bootstrap is employed for efficient implementation of responsive and modern layouts. With a keen eye for design aesthetics and a constant curiosity for innovative technologies, I strive to deliver high-quality
-            user experiences. I'm dedicated to expanding my knowledge and embracing new challenges in the ever-evolving world of web development. If you're seeking a committed Frontend Developer who masters the art of web development, I look forward to
-            collaborating with you.
-        </p>
+<section id="about">
+    <h2 class="header">My <span>Education</span></h2>
+    <div class="card-container">
+        <div class="card" *ngFor="let card of cards">
+            <img [src]="card.imageUrl" [alt]="card.altText" class="card-img-top">
+            <div class="card-body">
+                <h1><a [href]="card.website" target="_blank" class="card-text">{{ card.text1 }}</a></h1>
+                <div>
+                    <p class="card-text">{{ card.text2 }}</p>
+                    <p class="card-text">{{ card.text3 }}</p>
+                    <p class="card-text">{{ card.text4 }}</p>
+                </div>
+
+            </div>
+            <small> <i>{{ card.text5 }}</i> </small>
+        </div>
     </div>
 </section>
