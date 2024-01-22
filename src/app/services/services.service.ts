@@ -1,7 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { WorkExperience, Project, Card } from '../interfaces/interfaces';
+import {
+  WorkExperience,
+  Project,
+  Card,
+  Skills,
+} from '../interfaces/interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +17,7 @@ export class ServicesService {
     experiences: '/experiences',
     projects: '/projects',
     about: '/about',
+    skills: '/skills',
   };
 
   constructor(private http: HttpClient) {}
@@ -40,5 +46,9 @@ export class ServicesService {
 
   getAbout(): Observable<Card[]> {
     return this.get('about');
+  }
+
+  getSkills(): Observable<Skills[]> {
+    return this.get('skills');
   }
 }

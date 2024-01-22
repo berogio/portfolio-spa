@@ -24,3 +24,8 @@ export interface Card {
   notice?: string;
   website?: string;
 }
+export interface Skills {
+  icon: string;
+  name: string;
+  description: string;
+}
