@@ -6,6 +6,7 @@ import {
   Project,
   Card,
   Skills,
+  ContactFormData,
 } from '../interfaces/interfaces';
 
 @Injectable({
@@ -18,6 +19,7 @@ export class ServicesService {
     projects: '/projects',
     about: '/about',
     skills: '/skills',
+    contact: '/contact',
   };
 
   constructor(private http: HttpClient) {}
@@ -50,5 +52,14 @@ export class ServicesService {
 
   getSkills(): Observable<Skills[]> {
     return this.get('skills');
+  }
+
+  post(endpoint: string, data: ContactFormData): Observable<any> {
+    const url = this.createUrl(endpoint);
+    return this.http.post(url, data);
+  }
+
+  postContact(data: any): Observable<any> {
+    return this.post('contact', data);
   }
 }

@@ -29,3 +29,8 @@ export interface Skills {
   name: string;
   description: string;
 }
+
+export interface ContactFormData {
+  email: string;
+  message: string;
+}
