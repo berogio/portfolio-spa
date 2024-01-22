@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { WorkExperience, Project } from '../interfaces/interfaces';
+import { WorkExperience, Project, Card } from '../interfaces/interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +11,7 @@ export class ServicesService {
   private endpoints: any = {
     experiences: '/experiences',
     projects: '/projects',
+    about: '/about',
   };
 
   constructor(private http: HttpClient) {}
@@ -35,5 +36,9 @@ export class ServicesService {
 
   getProjects(): Observable<Project[]> {
     return this.get('projects');
+  }
+
+  getAbout(): Observable<Card[]> {
+    return this.get('about');
   }
 }
