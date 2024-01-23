@@ -26,16 +26,11 @@
   padding: 20px;
   color: white;
   overflow: hidden;
-}
-
-.card img {
-  width: 85%;
-  height: auto;
-  border-radius: 18px;
-  display: block;
+  order: 1;
 }
 
 .text {
+  order: 1;
   background-color: black;
   flex: 0 0 calc(50% - 20px);
   margin: 10px;
@@ -80,6 +75,34 @@
       text-decoration: underline;
     }
   }
+}
+
+@media (min-width: 769px) {
+  .text:nth-of-type(2) {
+    order: 2;
+  }
+  .text:nth-of-type(4) {
+    order: 3;
+  }
+  .text:nth-of-type(6) {
+    order: 6;
+  }
+  .card:nth-of-type(1) {
+    order: 1;
+  }
+  .card:nth-of-type(3) {
+    order: 4;
+  }
+  .card:nth-of-type(5) {
+    order: 5;
+  }
+}
+
+.card img {
+  width: 85%;
+  height: auto;
+  border-radius: 18px;
+  display: block;
 }
 
 .text::-webkit-scrollbar {
