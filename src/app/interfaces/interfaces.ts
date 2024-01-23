@@ -34,3 +34,12 @@ export interface ContactFormData {
   email: string;
   message: string;
 }
+
+export interface Project {
+  title: string;
+  description: string;
+  description2: string;
+  technologies: string[];
+  image: string;
+  liveDemoLink: string;
+}
