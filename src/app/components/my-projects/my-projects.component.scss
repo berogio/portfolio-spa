@@ -6,8 +6,20 @@
   background-color: black;
 }
 
-.card,
-.text {
+.header {
+  font-size: 1.8rem;
+  color: white;
+  background-color: black;
+  margin: 0;
+  padding: 30px;
+  text-align: center;
+  span {
+    font-weight: 100;
+    color: #e5eae77a;
+  }
+}
+
+.card {
   background-color: black;
   flex: 0 0 calc(50% - 20px);
   margin: 10px;
@@ -24,6 +36,12 @@
 }
 
 .text {
+  background-color: black;
+  flex: 0 0 calc(50% - 20px);
+  margin: 10px;
+  padding: 20px;
+  color: white;
+  overflow: hidden;
   overflow-y: auto;
   max-height: 400px;
   scrollbar-width: thin;
@@ -83,28 +101,5 @@
   }
   .card img {
     width: 100%;
-  }
-  .text2 {
-    display: none;
-  }
-  .text3 {
-    display: block !important;
-  }
-}
-
-.text3 {
-  display: none;
-}
-
-.header {
-  font-size: 1.8rem;
-  color: white;
-  background-color: black;
-  margin: 0;
-  padding: 30px;
-  text-align: center;
-  span {
-    font-weight: 100;
-    color: #e5eae77a;
   }
 }
