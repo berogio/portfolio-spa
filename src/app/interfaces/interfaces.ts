@@ -43,3 +43,6 @@ export interface Project {
   image: string;
   liveDemoLink: string;
 }
+export interface NavLink {
+  label: string;
+}

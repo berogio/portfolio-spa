@@ -20,6 +20,7 @@ export class ServicesService {
     about: '/about',
     skills: '/skills',
     contact: '/contact',
+    navigation: '/navigation',
   };
 
   constructor(private http: HttpClient) {}
@@ -52,6 +53,10 @@ export class ServicesService {
 
   getSkills(): Observable<Skills[]> {
     return this.get('skills');
+  }
+
+  getNav(): Observable<any> {
+    return this.get('navigation');
   }
 
   post(endpoint: string, data: ContactFormData): Observable<any> {
