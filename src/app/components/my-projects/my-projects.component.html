@@ -1,6 +1,6 @@
 <section id="my-projects">
     <h2 class="header"><span>My </span>Projects</h2>
-    <div class="container">
+    <div class="container" *ngIf="projects.length > 0">
         <div class="card">
             <img [src]="projects[0].image" alt="projects-img">
         </div>
