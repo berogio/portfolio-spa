@@ -1,0 +1,31 @@
+.welcome-wrapper {
+    padding: 100px 0px;
+    max-width: 800px;
+    margin: 0 auto;
+    .greeting {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #333;
+        /* oder deine gewünschte Farbe */
+    }
+    .about-header {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #333;
+        /* oder deine gewünschte Farbe */
+    }
+    .about-description {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #555;
+        /* oder deine gewünschte Farbe */
+    }
+    .about-footer {
+        font-size: 14px;
+        margin-top: 20px;
+        color: #777;
+        /* oder deine gewünschte Farbe */
+    }
+}

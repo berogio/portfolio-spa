@@ -1,53 +1,55 @@
-.my-font {
-  font-weight: 400;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
-}
-
-.skills-font {
-  font-weight: 900;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
+.header {
+    font-size: 1.8rem;
+    color: white;
+    background-color: black;
+    margin: 0;
+    padding: 0px 0px 30px 30px;
+    /* Änderung hier */
+    text-align: left;
+    /* Änderung hier */
+    span {
+        font-weight: 100;
+        color: #e5eae77a;
+    }
 }
 
 section {
-  background-color: black;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+    background-color: black;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .experience {
-  box-shadow: 0 3px 15px rgba(255, 255, 255, 0.388);
-  border: 1px solid rgba(255, 255, 255, 0.426);
-  border-radius: 10px;
-  background-color: black;
-  color: rgba(255, 255, 255, 0.713);
-  padding: 30px;
-  margin-bottom: 65px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  .s-wrapper {
-    display: flex;
-    color: white;
-    font-weight: bolder;
-    font-size: larger;
-    display: flex;
-    align-items: center;
-    img {
-      margin-right: 10px;
-      max-width: 3%;
-      height: auto;
+    box-shadow: 0 3px 15px rgba(255, 255, 255, 0.388);
+    border: 1px solid rgba(255, 255, 255, 0.426);
+    border-radius: 10px;
+    background-color: black;
+    color: rgba(255, 255, 255, 0.713);
+    padding: 30px;
+    margin-bottom: 65px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    .s-wrapper {
+        display: flex;
+        color: white;
+        font-weight: bolder;
+        font-size: larger;
+        display: flex;
+        align-items: center;
+        img {
+            margin-right: 10px;
+            max-width: 3%;
+            height: auto;
+        }
     }
-  }
-  .b-wrapper {
-    display: flex;
-    justify-content: space-between;
-  }
+    .b-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .experience:nth-child(3) {
-  background-color: rgba(255, 255, 255, 0.238);
+    background-color: rgba(255, 255, 255, 0.238);
 }

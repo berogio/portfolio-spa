@@ -18,6 +18,7 @@ import { KontaktModalComponent } from './components/kontakt-modal/kontakt-modal.
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     MyProjectsComponent,
     KontaktModalComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,
