@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ServicesService } from 'src/app/services/services.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-kontakt-modal',
@@ -13,7 +14,8 @@ export class KontaktModalComponent implements OnInit {
   constructor(
     private dialogRef: MatDialogRef<KontaktModalComponent>,
     private fb: FormBuilder,
-    private servicesService: ServicesService
+    private servicesService: ServicesService,
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit() {
@@ -26,19 +28,31 @@ export class KontaktModalComponent implements OnInit {
   closeDialog(): void {
     this.dialogRef.close();
   }
-
   submitForm() {
-    const formData = this.contactForm.value;
+    if (this.contactForm.valid) {
+      const formData = this.contactForm.value;
 
-    this.servicesService.postContact(formData).subscribe({
-      next: (response) => {
-        console.log('Antwort vom Server:', response);
-      },
-      error: (error) => {
-        console.error(error);
-        console.error(error.error);
-      },
-    });
+      this.servicesService.postContact(formData).subscribe({
+        next: () => {
+          this.snackBar.open('Message sent!', 'OK', {
+            duration: 3000,
+          });
+          this.dialogRef.close();
+        },
+        error: (error) => {
+          console.error(error);
+          console.error(error.error);
+        },
+      });
+    } else {
+      this.snackBar.open(
+        'Please fill out all required fields correctly.',
+        'OK',
+        {
+          duration: 3000,
+        }
+      );
+    }
   }
 
   redirectToExternalUrl(url: string): void {
