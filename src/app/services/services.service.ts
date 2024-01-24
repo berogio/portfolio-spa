@@ -14,7 +14,7 @@ import {
   providedIn: 'root',
 })
 export class ServicesService {
-  private baseUrl = 'http://localhost:3000';
+  private baseUrl = 'http://18.153.93.163';
   private endpoints: any = {
     experiences: '/experiences',
     projects: '/projects',
