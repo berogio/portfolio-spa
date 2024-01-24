@@ -38,12 +38,9 @@
       transform: translateY(20px);
       animation: fadeInUp 0.8s ease-out forwards;
       transition: background-color 0.3s ease, color 0.3s ease;
-      /* Hover transition */
       &:hover {
         background-color: #333;
-        /* Change background color on hover */
         color: white;
-        /* Change text color on hover */
       }
     }
     .angular {
@@ -62,7 +59,6 @@
       background-color: #ff9900;
       color: black;
     }
-    /* Add more styles for additional technologies */
   }
 }
 

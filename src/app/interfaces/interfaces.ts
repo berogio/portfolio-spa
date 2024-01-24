@@ -43,6 +43,16 @@ export interface Project {
   image: string;
   liveDemoLink: string;
 }
+
 export interface NavLink {
   label: string;
+}
+
+export interface WelcomeData {
+  _id?: string;
+  greeting: string;
+  aboutHeader: string;
+  aboutDescription: string;
+  aboutFooter: string;
+  technologies: string[];
 }

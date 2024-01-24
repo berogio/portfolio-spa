@@ -1,15 +1,9 @@
-<div class="welcome-wrapper">
-    <p class="greeting">Greetings, I'm a Fullstack Developer!</p>
-    <p class="about-header">About this Portfolio</p>
-    <p class="about-description">Thank you for visiting my portfolio! This platform serves as a showcase for my skills and projects. It's meticulously crafted with Angular, utilizing MongoDB for efficient data storage. The backend infrastructure is developed using NestJS and seamlessly
-        hosted on AWS EC2 instances. S3 plays a pivotal role in managing static files, and the Angular frontend is also deployed on its dedicated EC2 instance. To ensure optimal performance and scalability, Nginx and Docker are integral components of
-        the deployment architecture.</p>
-    <p class="about-footer">Designed and developed by Giorgi</p>
+<div class="welcome-wrapper" *ngIf="welcomeData.length > 0">
+    <p class="greeting">{{ welcomeData[0].greeting }}</p>
+    <p class="about-header">{{ welcomeData[0].aboutHeader }}</p>
+    <p class="about-description">{{ welcomeData[0].aboutDescription }}</p>
+    <p class="about-footer">{{ welcomeData[0].aboutFooter }}</p>
     <div class="technologies">
-        <span class="angular">Angular</span>
-        <span class="mongodb">MongoDB</span>
-        <span class="nestjs">NestJS</span>
-        <span class="aws">AWS</span>
-
+        <span *ngFor="let tech of welcomeData[0].technologies" [class]="tech.toLowerCase()">{{ tech }}</span>
     </div>
 </div>

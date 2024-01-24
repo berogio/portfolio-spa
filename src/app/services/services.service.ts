@@ -7,6 +7,7 @@ import {
   Card,
   Skills,
   ContactFormData,
+  WelcomeData,
 } from '../interfaces/interfaces';
 
 @Injectable({
@@ -21,6 +22,7 @@ export class ServicesService {
     skills: '/skills',
     contact: '/contact',
     navigation: '/navigation',
+    welcome: '/welcome',
   };
 
   constructor(private http: HttpClient) {}
@@ -57,6 +59,10 @@ export class ServicesService {
 
   getNav(): Observable<any> {
     return this.get('navigation');
+  }
+
+  getWelcome(): Observable<WelcomeData> {
+    return this.get('welcome');
   }
 
   post(endpoint: string, data: ContactFormData): Observable<any> {
