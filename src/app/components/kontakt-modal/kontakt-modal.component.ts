@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ServicesService } from 'src/app/services/services.service';
 
 @Component({
   selector: 'app-kontakt-modal',
@@ -11,7 +12,8 @@ export class KontaktModalComponent implements OnInit {
   contactForm!: FormGroup;
   constructor(
     private dialogRef: MatDialogRef<KontaktModalComponent>,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private servicesService: ServicesService
   ) {}
 
   ngOnInit() {
@@ -25,7 +27,19 @@ export class KontaktModalComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  submitForm() {}
+  submitForm() {
+    const formData = this.contactForm.value;
+
+    this.servicesService.postContact(formData).subscribe({
+      next: (response) => {
+        console.log('Antwort vom Server:', response);
+      },
+      error: (error) => {
+        console.error(error);
+        console.error(error.error);
+      },
+    });
+  }
 
   redirectToExternalUrl(url: string): void {
     window.open(url, '_blank');

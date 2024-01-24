@@ -8,15 +8,14 @@
             <a routerLink="{{ link.routerLink }}" (click)="scrollToSection(link.section)">{{ link.label }}</a>
         </ng-container>
     </div>
-
     <div class="lang-cv-wrapper">
         <button class="action-button">Resume<span class="material-symbols-outlined">download</span></button>
         <div class="language-selection" (mouseenter)="openDropdown()" (mouseleave)="closeDropdown()">
             <div class="custom-select">
                 <div *ngIf="isDropdownOpen" class="dropdown-options">
-                    <div (click)="selectLanguage('en')"><img src="/assets/en.svg" alt="UK Flag"></div>
-                    <div (click)="selectLanguage('de')"><img src="/assets/de.svg" alt="Germany Flag"></div>
-                    <div (click)="selectLanguage('ge')"><img src="/assets/ka.svg" alt="USA Flag"></div>
+                    <div (click)="selectLanguage('en')"><img src="/assets/images/languages/en.svg" alt="UK Flag"></div>
+                    <div (click)="selectLanguage('de')"><img src="/assets/images/languages/de.svg" alt="Germany Flag"></div>
+                    <div (click)="selectLanguage('ge')"><img src="/assets/images/languages/ka.svg" alt="USA Flag"></div>
                 </div>
                 <div class="selected-option" (click)="toggleDropdown()">
                     {{ selectedLanguage }}
@@ -34,5 +33,4 @@
             </div>
         </div>
     </div>
-
 </header>

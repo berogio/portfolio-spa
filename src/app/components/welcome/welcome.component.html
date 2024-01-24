@@ -1,0 +1,9 @@
+<div class="welcome-wrapper" *ngIf="welcomeData.length > 0">
+    <p class="greeting">{{ welcomeData[0].greeting }}</p>
+    <p class="about-header">{{ welcomeData[0].aboutHeader }}</p>
+    <p class="about-description">{{ welcomeData[0].aboutDescription }}</p>
+    <p class="about-footer">{{ welcomeData[0].aboutFooter }}</p>
+    <div class="technologies">
+        <span *ngFor="let tech of welcomeData[0].technologies" [class]="tech.toLowerCase()">{{ tech }}</span>
+    </div>
+</div>

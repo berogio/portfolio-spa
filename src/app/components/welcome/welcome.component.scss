@@ -1,0 +1,100 @@
+.welcome-wrapper {
+  padding: 110px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  .greeting {
+    font-size: 36px;
+    line-height: 1;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  .about-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  .about-description {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+  }
+  .about-footer {
+    font-size: 14px;
+    margin-top: 20px;
+    color: #777;
+  }
+  .technologies {
+    margin-top: 20px;
+    span {
+      display: inline-block;
+      padding: 5px 10px;
+      margin: 0 5px;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: bold;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease-out forwards;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      &:hover {
+        background-color: #333;
+        color: white;
+      }
+    }
+    .angular {
+      background-color: #dd1b16;
+      color: white;
+    }
+    .mongodb {
+      background-color: #4db33d;
+      color: white;
+    }
+    .nestjs {
+      background-color: #e0234e;
+      color: white;
+    }
+    .aws {
+      background-color: #ff9900;
+      color: black;
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .welcome-wrapper {
+    padding: 80px 20px;
+  }
+  .greeting {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  .about-header {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .about-description {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .about-footer {
+    font-size: 12px;
+    margin-top: 15px;
+  }
+  .technologies {
+    margin-top: 15px;
+    span {
+      font-size: 12px;
+      padding: 3px 8px;
+      margin: 0 3px;
+    }
+  }
+}

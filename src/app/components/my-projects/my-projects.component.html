@@ -1,90 +1,48 @@
 <section id="my-projects">
     <h2 class="header"><span>My </span>Projects</h2>
-    <div class="container">
-
+    <div class="container" *ngIf="projects.length > 0">
         <div class="card">
-            <img src="/assets/images/testtttt.png" alt="">
+            <img [src]="projects[0].image" alt="projects-img">
         </div>
         <div class="text">
             <h1>01</h1>
-            <h1>Registration and Login System</h1>
-            <p>This web application allows users to register, log in, change their password, and includes a contact form.</p>
-            <p>User Registration: Register with a unique username and email. User Login: Authenticate using registered credentials. Password Change: Change the password for an authenticated user. Contact Form: Submit inquiries or feedback through a contact
-                form. Session Management: Manage user sessions for authentication. JWT (JSON Web Tokens): Utilize JWT for secure authentication. Nodemailer: Send confirmation emails for successful registration. Responsive Design: Ensure optimal viewing
-                on various devices. Internationalization (i18n): Localize and translate messages for different languages using i18n.</p>
+            <h1>{{projects[0].title}}</h1>
+            <p>{{projects[0].description}}</p>
+            <p>{{projects[0].description2}}</p>
             <p>Technologies Used:</p>
             <ul>
-                <li>JWT for authentication</li>
-                <li>Node.Js (Node.js and Express for the backend)</li>
-                <li>JavaScript </li>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>MongoDB with Mongoose for the database</li>
-                <li>Nodemailer for email confirmation</li>
-                <li>Session management with express-session</li>
+                <li *ngFor="let tech of projects[0].technologies">{{ tech }}</li>
             </ul>
-            <a href="https://github.com/berogio/registration-api">Check out the live demo of the Registration and Login System here.</a>
-        </div>
-        <div class="text text2">
-            <h1>02</h1>
-            <h1>Photosnap Website solution</h1>
-            <p>Useful resources</p>
-            <p>w3schools - This web-page helped us to dig deeper into HTML and CSS, and improve number of issues in this direction. We really liked this web-page and will use it in the future as well. developer.mozilla - This is an amazing web-page which
-                gave us in-depth knowledge in JavaScript language. We'd recommend it to anyone still learning this language. stackoverflow - This is an amazing web-page where you can ask any technical question about speciefic issue and other developers
-                will help you to solve the problem. Their Q&A platform is a great tool to find the right answer for your project. We highly recommend this web-page for other developers.</p>
-            <p>Technologies Used:</p>
-            <ul>
-                <li>JavaScript (Node.js and Express for the backend)</li>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>Bootstrap</li>
-                <li>SCSS</li>
-                <li>FlexBOX</li>
-            </ul>
-            <a href="https://photosnap-multi-page-website-006.vercel.app">Check out the live demo of the Registration and Login System here.</a>
-        </div>
-        <div class="card ">
-            <img src="/assets/images/preview.jpg" alt="">
-        </div>
-        <div class="text text3">
-            <h1>02</h1>
-            <h1>Photosnap Website solution</h1>
-            <p>Useful resources</p>
-            <p>w3schools - This web-page helped us to dig deeper into HTML and CSS, and improve number of issues in this direction. We really liked this web-page and will use it in the future as well. developer.mozilla - This is an amazing web-page which
-                gave us in-depth knowledge in JavaScript language. We'd recommend it to anyone still learning this language. stackoverflow - This is an amazing web-page where you can ask any technical question about speciefic issue and other developers
-                will help you to solve the problem. Their Q&A platform is a great tool to find the right answer for your project. We highly recommend this web-page for other developers.</p>
-            <p>Technologies Used:</p>
-            <ul>
-                <li>JavaScript (Node.js and Express for the backend)</li>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>Bootstrap</li>
-                <li>SCSS</li>
-                <li>FlexBOX</li>
-            </ul>
-            <a href="https://photosnap-multi-page-website-006.vercel.app">Check out the live demo of the Registration and Login System here.</a>
+            <a [href]="projects[0].liveDemoLink">Check out the live demo of the Registration and Login System here.</a>
         </div>
 
-        <div class="card ">
-            <img src="/assets/images/preview.jpg" alt="">
+        <div class="card">
+            <img [src]="projects[1].image" alt="projects-img">
+        </div>
+        <div class="text">
+            <h1>02</h1>
+            <h1>{{projects[1].title}}</h1>
+            <p>{{projects[1].description}}</p>
+            <p>{{projects[1].description2}}</p>
+            <p>Technologies Used:</p>
+            <ul>
+                <li *ngFor="let tech of projects[1].technologies">{{ tech }}</li>
+            </ul>
+            <a [href]="projects[1].liveDemoLink">Check out the live demo of the Registration and Login System here.</a>
+        </div>
+        <div class="card">
+            <img [src]="projects[2].image" alt="projects-img">
         </div>
         <div class="text">
             <h1>03</h1>
-            <h1>Photosnap Website solution</h1>
-            <p>Useful resources</p>
-            <p>w3schools - This web-page helped us to dig deeper into HTML and CSS, and improve number of issues in this direction. We really liked this web-page and will use it in the future as well. developer.mozilla - This is an amazing web-page which
-                gave us in-depth knowledge in JavaScript language. We'd recommend it to anyone still learning this language. stackoverflow - This is an amazing web-page where you can ask any technical question about speciefic issue and other developers
-                will help you to solve the problem. Their Q&A platform is a great tool to find the right answer for your project. We highly recommend this web-page for other developers.</p>
+            <h1>{{projects[2].title}}</h1>
+            <p>{{projects[2].description}}</p>
+            <p>{{projects[2].description2}}</p>
             <p>Technologies Used:</p>
             <ul>
-                <li>JavaScript (Node.js and Express for the backend)</li>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>Bootstrap</li>
-                <li>SCSS</li>
-                <li>FlexBOX</li>
+                <li *ngFor="let tech of projects[2].technologies">{{ tech }}</li>
             </ul>
-            <a href="https://photosnap-multi-page-website-006.vercel.app">Check out the live demo of the Registration and Login System here.</a>
+            <a [href]="projects[2].liveDemoLink">Check out the live demo of the Registration and Login System here.</a>
         </div>
     </div>
 </section>

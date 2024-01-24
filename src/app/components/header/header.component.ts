@@ -1,6 +1,8 @@
 import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { NavLink } from 'src/app/interfaces/interfaces';
+import { ServicesService } from 'src/app/services/services.service';
 
 @Component({
   selector: 'app-header',
@@ -15,28 +17,28 @@ export class HeaderComponent implements AfterViewInit {
 
   navLinks = [
     {
-      label: 'Skills',
+      label: '',
       routerLink: '/skills',
       section: 'skills',
       icon: 'material-symbols-outlined',
       iconName: 'star_half',
     },
     {
-      label: 'Experience',
+      label: '',
       routerLink: '/experience',
       section: 'experience',
       icon: 'material-symbols-outlined',
       iconName: ' settings',
     },
     {
-      label: 'Projects',
+      label: '',
       routerLink: '/projects',
       section: 'my-projects',
       icon: 'material-symbols-outlined',
       iconName: 'phone_enabled',
     },
     {
-      label: 'About Me',
+      label: '',
       routerLink: '/about',
       section: 'about',
       icon: 'material-symbols-outlined',
@@ -44,7 +46,30 @@ export class HeaderComponent implements AfterViewInit {
     },
   ];
 
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private servicesService: ServicesService
+  ) {}
+
+  ngOnInit(): void {
+    this.loadExperiences();
+  }
+
+  loadExperiences() {
+    this.servicesService.getNav().subscribe({
+      next: (data: NavLink[]) => {
+        this.navLinks.forEach((staticLink, index) => {
+          if (data[index]) {
+            staticLink.label = data[index].label;
+          }
+        });
+      },
+      error: (error) => {
+        console.error('Error loading navigation:', error);
+      },
+    });
+  }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
@@ -90,6 +115,5 @@ export class HeaderComponent implements AfterViewInit {
   selectLanguage(language: string) {
     this.selectedLanguage = language.toLocaleUpperCase();
     this.isDropdownOpen = false;
-    console.log(this.selectedLanguage);
   }
 }

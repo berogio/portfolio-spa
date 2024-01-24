@@ -1,18 +1,17 @@
 <section id="about">
     <h2 class="header">My <span>Education</span></h2>
     <div class="card-container">
-        <div class="card" *ngFor="let card of cards">
+        <div class="card" *ngFor="let card of About">
             <img [src]="card.imageUrl" [alt]="card.altText" class="card-img-top">
             <div class="card-body">
-                <h1><a [href]="card.website" target="_blank" class="card-text">{{ card.text1 }}</a></h1>
+                <h1><a [href]="card.website" target="_blank" class="card-text">{{ card.organization }}</a></h1>
                 <div>
-                    <p class="card-text">{{ card.text2 }}</p>
-                    <p class="card-text">{{ card.text3 }}</p>
-                    <p class="card-text">{{ card.text4 }}</p>
+                    <p class="card-text">{{ card.focusArea }}</p>
+                    <p class="card-text">{{ card.additionalInfo1 }}</p>
+                    <p class="card-text">{{ card.additionalInfo2 }}</p>
                 </div>
-
             </div>
-            <small> <i>{{ card.text5 }}</i> </small>
+            <small><i>{{ card.notice }}</i></small>
         </div>
     </div>
 </section>

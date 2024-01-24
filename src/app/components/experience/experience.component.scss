@@ -1,18 +1,30 @@
-.my-font {
-  font-weight: 400;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+.header {
+  font-size: 1.8rem;
   color: white;
+  background-color: black;
+  margin: 0;
+  text-align: left;
+  span {
+    font-weight: 100;
+    color: #e5eae77a;
+  }
 }
 
-.skills-font {
-  font-weight: 900;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  height: 100px;
+  img {
+    width: 60px;
+    height: auto;
+  }
 }
 
 section {
   background-color: black;
-  padding: 30px;
+  padding: 0px 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
