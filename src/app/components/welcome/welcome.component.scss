@@ -1,5 +1,5 @@
 .welcome-wrapper {
-  padding: 110px 0px;
+  padding: 110px 20px;
   max-width: 800px;
   margin: 0 auto;
   .greeting {
@@ -66,5 +66,35 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .welcome-wrapper {
+    padding: 80px 20px;
+  }
+  .greeting {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  .about-header {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .about-description {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .about-footer {
+    font-size: 12px;
+    margin-top: 15px;
+  }
+  .technologies {
+    margin-top: 15px;
+    span {
+      font-size: 12px;
+      padding: 3px 8px;
+      margin: 0 3px;
+    }
   }
 }
