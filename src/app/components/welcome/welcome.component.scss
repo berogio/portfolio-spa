@@ -25,4 +25,50 @@
     margin-top: 20px;
     color: #777;
   }
+  .technologies {
+    margin-top: 20px;
+    span {
+      display: inline-block;
+      padding: 5px 10px;
+      margin: 0 5px;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: bold;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease-out forwards;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      /* Hover transition */
+      &:hover {
+        background-color: #333;
+        /* Change background color on hover */
+        color: white;
+        /* Change text color on hover */
+      }
+    }
+    .angular {
+      background-color: #dd1b16;
+      color: white;
+    }
+    .mongodb {
+      background-color: #4db33d;
+      color: white;
+    }
+    .nestjs {
+      background-color: #e0234e;
+      color: white;
+    }
+    .aws {
+      background-color: #ff9900;
+      color: black;
+    }
+    /* Add more styles for additional technologies */
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
