@@ -14,7 +14,7 @@ import {
   providedIn: 'root',
 })
 export class ServicesService {
-  private baseUrl = 'http://18.153.93.163';
+  private baseUrl = 'https://portfolio-api-production-6224.up.railway.app';
   private endpoints: any = {
     experiences: '/experiences',
     projects: '/projects',
