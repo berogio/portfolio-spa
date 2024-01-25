@@ -12,7 +12,10 @@ import { ServicesService } from 'src/app/services/services.service';
 export class HeaderComponent implements AfterViewInit {
   @ViewChild('navbar', { static: true }) private navbar!: ElementRef;
   isMenuOpen = false;
-  selectedLanguage = 'EN';
+
+  selectedLanguage: string =
+    localStorage.getItem('selectedLanguage')?.toLocaleUpperCase() || 'EN';
+
   isDropdownOpen = false;
 
   navLinks = [
@@ -53,10 +56,10 @@ export class HeaderComponent implements AfterViewInit {
   ) {}
 
   ngOnInit(): void {
-    this.loadNavLinks();
+    this.loadExperiences();
   }
 
-  loadNavLinks() {
+  loadExperiences() {
     this.servicesService.getNav().subscribe({
       next: (data: NavLink[]) => {
         this.navLinks.forEach((staticLink, index) => {
@@ -89,7 +92,6 @@ export class HeaderComponent implements AfterViewInit {
   scrollToSection(section: string): void {
     const element = document.getElementById(section);
     if (element) {
-      console.log('fragment', element);
       element.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
@@ -114,7 +116,8 @@ export class HeaderComponent implements AfterViewInit {
   }
 
   selectLanguage(language: string) {
-    this.selectedLanguage = language.toLocaleUpperCase();
     this.isDropdownOpen = false;
+    window.location.reload();
+    localStorage.setItem('selectedLanguage', language.toLocaleLowerCase());
   }
 }
