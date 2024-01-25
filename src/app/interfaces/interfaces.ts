@@ -49,10 +49,10 @@ export interface NavLink {
 }
 
 export interface WelcomeData {
-  _id?: string;
-  greeting: string;
-  aboutHeader: string;
   aboutDescription: string;
   aboutFooter: string;
+  aboutHeader: string;
+  greeting: string;
   technologies: string[];
+  language: string;
 }

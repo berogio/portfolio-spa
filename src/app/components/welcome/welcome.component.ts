@@ -8,7 +8,7 @@ import { ServicesService } from 'src/app/services/services.service';
   styleUrls: ['./welcome.component.scss'],
 })
 export class WelcomeComponent implements OnInit {
-  welcomeData: WelcomeData[] = [];
+  welcomeData: WelcomeData | undefined;
   constructor(private servicesService: ServicesService) {}
 
   ngOnInit(): void {
@@ -17,8 +17,11 @@ export class WelcomeComponent implements OnInit {
 
   loadWelcomeData() {
     this.servicesService.getWelcome().subscribe({
-      next: (data: WelcomeData) => {
-        this.welcomeData.push(data);
+      next: (data: WelcomeData[]) => {
+        if (data.length > 0) {
+          this.welcomeData = data[0];
+          console.log(this.welcomeData);
+        }
       },
       error: (error) => {
         console.error('Error loading welcome data:', error);
