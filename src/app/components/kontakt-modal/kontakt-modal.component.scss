@@ -19,34 +19,38 @@
 }
 
 .icon-container > * {
-  filter: brightness(60%);
+  filter: brightness(80%);
   background-repeat: no-repeat;
   width: 30px;
   height: 30px;
+  transition: filter 0.3s ease;
 }
 
 .icon-container > *:hover {
-  filter: none;
+  transform: scale(1.2);
+  filter: brightness(100%);
   cursor: pointer;
 }
 
 .fb {
-  background-image: url("../../../assets/images/instagram.svg");
+  background-image: url("/assets/images/instagram.svg");
 }
 
 .you {
   background-size: 20px;
-  background-image: url("../../../assets/images/LinkedIn_icon.svg");
+  background-image: url("/assets/images/LinkedIn_icon.svg");
 }
 
-.twi {
-  background-image: url("../../../assets/images/twitter.svg");
-}
-
-.pin {
-  background-image: url("../../../assets/images/pinterest.svg");
+.gmail {
+  background-size: 20px;
+  background-image: url("/assets/images/gmail.svg");
 }
 
 .ins {
-  background-image: url("../../../assets/images/instagram.svg");
+  background-image: url("/assets/images/instagram.svg");
+}
+
+.git {
+  background-size: 20px;
+  background-image: url("/assets/images/github.svg");
 }

@@ -58,4 +58,7 @@ export class KontaktModalComponent implements OnInit {
   redirectToExternalUrl(url: string): void {
     window.open(url, '_blank');
   }
+  openEmail(emailAddress: string) {
+    window.open(`mailto:${emailAddress}`, '_blank');
+  }
 }
