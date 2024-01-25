@@ -146,8 +146,8 @@ header {
   .nav-links {
     display: none;
   }
-  .action-button {
-    display: none;
+  header button {
+    display: none !important;
   }
 }
 
