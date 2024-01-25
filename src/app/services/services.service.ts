@@ -14,7 +14,7 @@ import {
   providedIn: 'root',
 })
 export class ServicesService {
-  private baseUrl = 'https://portfolio-api-production-6224.up.railway.app';
+  private baseUrl = 'http://localhost:3000';
   private endpoints: any = {
     experiences: '/experiences',
     projects: '/projects',
@@ -25,44 +25,48 @@ export class ServicesService {
     welcome: '/welcome',
   };
 
+  private language: any = localStorage.getItem('selectedLanguage') || 'en';
+
   constructor(private http: HttpClient) {}
 
-  private createUrl(endpoint: string): string {
+  private createUrl(endpoint: string, language?: string): string {
     const endpointUrl = this.endpoints[endpoint];
+    const lang = language || this.language;
+    const languageParam = `?language=${lang}`;
     if (endpointUrl) {
-      return `${this.baseUrl}${endpointUrl}`;
+      return `${this.baseUrl}${endpointUrl}${languageParam}`;
     } else {
       throw new Error(`Ungültiger Endpunkt: ${endpoint}`);
     }
   }
 
-  get(endpoint: string): Observable<any> {
-    const url = this.createUrl(endpoint);
+  get(endpoint: string, language?: string): Observable<any> {
+    const url = this.createUrl(endpoint, language);
     return this.http.get(url);
   }
 
-  getAllExperiences(): Observable<WorkExperience[]> {
-    return this.get('experiences');
+  getAllExperiences(language?: string): Observable<WorkExperience[]> {
+    return this.get('experiences', language);
   }
 
-  getProjects(): Observable<Project[]> {
-    return this.get('projects');
+  getProjects(language?: string): Observable<Project[]> {
+    return this.get('projects', language);
   }
 
-  getAbout(): Observable<Card[]> {
-    return this.get('about');
+  getAbout(language?: string): Observable<Card[]> {
+    return this.get('about', language);
   }
 
-  getSkills(): Observable<Skills[]> {
-    return this.get('skills');
+  getSkills(language?: string): Observable<Skills[]> {
+    return this.get('skills', language);
   }
 
-  getNav(): Observable<any> {
-    return this.get('navigation');
+  getNav(language?: string): Observable<any> {
+    return this.get('navigation', language);
   }
 
-  getWelcome(): Observable<WelcomeData> {
-    return this.get('welcome');
+  getWelcome(language?: string): Observable<WelcomeData> {
+    return this.get('welcome', language);
   }
 
   post(endpoint: string, data: ContactFormData): Observable<any> {
@@ -70,7 +74,7 @@ export class ServicesService {
     return this.http.post(url, data);
   }
 
-  postContact(data: any): Observable<any> {
+  postContact(data: any, language?: string): Observable<any> {
     return this.post('contact', data);
   }
 }
