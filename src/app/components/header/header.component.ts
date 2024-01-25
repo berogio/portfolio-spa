@@ -53,10 +53,10 @@ export class HeaderComponent implements AfterViewInit {
   ) {}
 
   ngOnInit(): void {
-    this.loadExperiences();
+    this.loadNavLinks();
   }
 
-  loadExperiences() {
+  loadNavLinks() {
     this.servicesService.getNav().subscribe({
       next: (data: NavLink[]) => {
         this.navLinks.forEach((staticLink, index) => {
@@ -89,6 +89,7 @@ export class HeaderComponent implements AfterViewInit {
   scrollToSection(section: string): void {
     const element = document.getElementById(section);
     if (element) {
+      console.log('fragment', element);
       element.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
