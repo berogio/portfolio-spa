@@ -20,7 +20,6 @@ export class WelcomeComponent implements OnInit {
       next: (data: WelcomeData[]) => {
         if (data.length > 0) {
           this.welcomeData = data[0];
-          console.log(this.welcomeData);
         }
       },
       error: (error) => {
