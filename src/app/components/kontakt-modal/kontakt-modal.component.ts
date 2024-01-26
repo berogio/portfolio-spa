@@ -3,6 +3,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ServicesService } from 'src/app/services/services.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { TranslationService } from 'src/app/services/translation-service.service';
 
 @Component({
   selector: 'app-kontakt-modal',
@@ -15,7 +16,8 @@ export class KontaktModalComponent implements OnInit {
     private dialogRef: MatDialogRef<KontaktModalComponent>,
     private fb: FormBuilder,
     private servicesService: ServicesService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private translationService: TranslationService
   ) {}
 
   ngOnInit() {
@@ -25,9 +27,6 @@ export class KontaktModalComponent implements OnInit {
     });
   }
 
-  closeDialog(): void {
-    this.dialogRef.close();
-  }
   submitForm() {
     if (this.contactForm.valid) {
       const formData = this.contactForm.value;
@@ -60,5 +59,15 @@ export class KontaktModalComponent implements OnInit {
   }
   openEmail(emailAddress: string) {
     window.open(`mailto:${emailAddress}`, '_blank');
+  }
+  closeDialog(): void {
+    this.dialogRef.close();
+  }
+  //translate service
+  getCancel(): string {
+    return this.translationService.getTranslation('cancel');
+  }
+  getSend(): string {
+    return this.translationService.getTranslation('send');
   }
 }

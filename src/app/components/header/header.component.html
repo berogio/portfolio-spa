@@ -9,7 +9,7 @@
         </ng-container>
     </div>
     <div class="lang-cv-wrapper">
-        <button>Resume<span class="material-symbols-outlined">download</span></button>
+        <button>{{ getResume() }}<span class="material-symbols-outlined">download</span></button>
         <div class="language-selection" (mouseenter)="openDropdown()" (mouseleave)="closeDropdown()">
             <div class="custom-select">
                 <div *ngIf="isDropdownOpen" class="dropdown-options">
