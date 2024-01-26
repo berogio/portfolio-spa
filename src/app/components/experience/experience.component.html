@@ -1,6 +1,7 @@
 <section id="experience">
     <div class="header-wrapper">
-        <h2 class="header">My <span>Experience</span></h2>
+        <h2 class="header">{{ getExperience().prefix }} <span>{{ getExperience().suffix }}</span></h2>
+
         <img src="/assets/images/experience_1.png" alt="">
     </div>
     <div class="experience" *ngFor="let experience of experiences">

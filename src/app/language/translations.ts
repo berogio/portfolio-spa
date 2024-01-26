@@ -3,16 +3,6 @@ export interface Translation {
 }
 
 export const translations: { [key: string]: Translation } = {
-  de: {
-    resume: 'Lebenslauf',
-    send: 'Senden',
-    cancel: 'Abbrechen',
-    contact: 'Kontakt',
-    emailRequired: 'E-Mail ist erforderlich',
-    emailInvalid: 'Ungültiges E-Mail-Format',
-    messageRequired: 'Nachricht ist erforderlich',
-    messageMinLength: 'Nachricht muss mindestens 10 Zeichen lang sein',
-  },
   en: {
     resume: 'Resume',
     send: 'Send',
@@ -22,6 +12,18 @@ export const translations: { [key: string]: Translation } = {
     emailInvalid: 'Invalid email format',
     messageRequired: 'Message is required',
     messageMinLength: 'Message must be at least 10 characters long',
+    myExperience: 'My Experience',
+  },
+  de: {
+    resume: 'Lebenslauf',
+    send: 'Senden',
+    cancel: 'Abbrechen',
+    contact: 'Kontakt',
+    emailRequired: 'E-Mail ist erforderlich',
+    emailInvalid: 'Ungültiges E-Mail-Format',
+    messageRequired: 'Nachricht ist erforderlich',
+    messageMinLength: 'Nachricht muss mindestens 10 Zeichen lang sein',
+    myExperience: 'Meine Erfahrung',
   },
   ge: {
     resume: 'რეზიუმე',
@@ -32,5 +34,6 @@ export const translations: { [key: string]: Translation } = {
     emailInvalid: 'არასწორი ელ. ფოსტის ფორმატი',
     messageRequired: 'მესიჯი აუცილებელია',
     messageMinLength: 'მესიჯი უნდა იყოს მინიმუმ 10 სიმბოლო',
+    myExperience: 'ჩემი გამოცდილება',
   },
 };
