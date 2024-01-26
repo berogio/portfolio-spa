@@ -3,6 +3,7 @@ import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { NavLink } from 'src/app/interfaces/interfaces';
 import { ServicesService } from 'src/app/services/services.service';
+import { TranslationService } from 'src/app/services/translation-service.service';
 
 @Component({
   selector: 'app-header',
@@ -52,9 +53,13 @@ export class HeaderComponent implements AfterViewInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private servicesService: ServicesService
+    private servicesService: ServicesService,
+    private translationService: TranslationService
   ) {}
 
+  getResume(): string {
+    return this.translationService.getTranslation('resume');
+  }
   ngOnInit(): void {
     this.loadExperiences();
   }

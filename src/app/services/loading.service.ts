@@ -1,8 +1,5 @@
-// loading.service.ts
-
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, timer } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
