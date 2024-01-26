@@ -30,12 +30,15 @@ export class KontaktModalComponent implements OnInit {
   submitForm() {
     if (this.contactForm.valid) {
       const formData = this.contactForm.value;
-
       this.servicesService.postContact(formData).subscribe({
         next: () => {
-          this.snackBar.open('Message sent!', 'OK', {
-            duration: 3000,
-          });
+          this.snackBar.open(
+            this.translationService.getTranslation('messageSent'),
+            'OK!',
+            {
+              duration: 4000,
+            }
+          );
           this.dialogRef.close();
         },
         error: (error) => {
@@ -45,7 +48,7 @@ export class KontaktModalComponent implements OnInit {
       });
     } else {
       this.snackBar.open(
-        'Please fill out all required fields correctly.',
+        this.translationService.getTranslation('requiredFields'),
         'OK',
         {
           duration: 3000,

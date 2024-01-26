@@ -13,6 +13,8 @@ export const translations: { [key: string]: Translation } = {
     messageRequired: 'Message is required',
     messageMinLength: 'Message must be at least 10 characters long',
     myExperience: 'My Experience',
+    messageSent: 'Message sent!, OK!',
+    requiredFields: 'Please fill out all required fields correctly.',
   },
   de: {
     resume: 'Lebenslauf',
@@ -24,6 +26,8 @@ export const translations: { [key: string]: Translation } = {
     messageRequired: 'Nachricht ist erforderlich',
     messageMinLength: 'Nachricht muss mindestens 10 Zeichen lang sein',
     myExperience: 'Meine Erfahrung',
+    messageSent: 'Nachricht gesendet!, OK!',
+    requiredFields: 'Bitte füllen Sie alle erforderlichen Felder korrekt aus.',
   },
   ge: {
     resume: 'რეზიუმე',
@@ -35,5 +39,7 @@ export const translations: { [key: string]: Translation } = {
     messageRequired: 'მესიჯი აუცილებელია',
     messageMinLength: 'მესიჯი უნდა იყოს მინიმუმ 10 სიმბოლო',
     myExperience: 'ჩემი გამოცდილება',
+    messageSent: 'მესიჯი გაიგზავნა! OK!',
+    requiredFields: 'გთხოვთ, შეავსეთ ყველა საჭირო ველი სწორად.',
   },
 };
