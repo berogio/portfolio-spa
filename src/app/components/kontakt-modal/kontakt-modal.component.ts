@@ -63,11 +63,27 @@ export class KontaktModalComponent implements OnInit {
   closeDialog(): void {
     this.dialogRef.close();
   }
+
   //translate service
   getCancel(): string {
     return this.translationService.getTranslation('cancel');
   }
   getSend(): string {
     return this.translationService.getTranslation('send');
+  }
+  getContact(): string {
+    return this.translationService.getTranslation('contact');
+  }
+  getRequired(): string {
+    return this.translationService.getTranslation('emailRequired');
+  }
+  getInvalid(): string {
+    return this.translationService.getTranslation('emailInvalid');
+  }
+  getMRequired(): string {
+    return this.translationService.getTranslation('messageRequired');
+  }
+  getMMinLength(): string {
+    return this.translationService.getTranslation('messageMinLength');
   }
 }
