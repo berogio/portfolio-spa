@@ -10,7 +10,7 @@
             <mat-error *ngIf="contactForm.get('email')?.hasError('email')">Invalid E-Mail format</mat-error>
         </mat-form-field>
         <mat-form-field class="custom-form-field">
-            <textarea matInput placeholder="Nachricht" class="custom-input" rows="5" formControlName="message"></textarea>
+            <textarea matInput placeholder="Message" class="custom-input" rows="5" formControlName="message"></textarea>
             <mat-error *ngIf="contactForm.get('message')?.hasError('required')">Message is required</mat-error>
             <mat-error *ngIf="contactForm.get('message')?.hasError('minlength')">Message must be at least 10 characters</mat-error>
         </mat-form-field>
