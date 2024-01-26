@@ -36,7 +36,7 @@ export class ServicesService {
     if (endpointUrl) {
       return `${this.baseUrl}${endpointUrl}${languageParam}`;
     } else {
-      throw new Error(`Ungültiger Endpunkt: ${endpoint}`);
+      throw new Error(`Invalid endpoint: ${endpoint}`);
     }
   }
 
