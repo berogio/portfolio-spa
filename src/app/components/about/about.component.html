@@ -1,5 +1,5 @@
 <section id="about">
-    <h2 class="header">My <span>Education</span></h2>
+    <h2 class="header">{{getEducations().prefix}} <span>{{getEducations().suffix}}</span></h2>
     <div class="card-container">
         <div class="card" *ngFor="let card of About">
             <img [src]="card.imageUrl" [alt]="card.altText" class="card-img-top">

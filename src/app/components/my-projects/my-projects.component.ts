@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from 'src/app/interfaces/interfaces';
 import { ServicesService } from 'src/app/services/services.service';
+import { TranslationService } from 'src/app/services/translation-service.service';
 
 @Component({
   selector: 'app-my-projects',
@@ -10,7 +11,10 @@ import { ServicesService } from 'src/app/services/services.service';
 export class MyProjectsComponent implements OnInit {
   projects: Project[] = [];
 
-  constructor(private servicesService: ServicesService) {}
+  constructor(
+    private servicesService: ServicesService,
+    private translationService: TranslationService
+  ) {}
 
   ngOnInit(): void {
     this.loadProjects();
@@ -25,5 +29,11 @@ export class MyProjectsComponent implements OnInit {
         console.error('Error loading projects:', error);
       },
     });
+  }
+
+  getProject(): { prefix: string; suffix: string } {
+    const experience = this.translationService.getTranslation('myProjects');
+    const parts = experience.split(' ');
+    return { prefix: parts[0], suffix: parts[1] };
   }
 }

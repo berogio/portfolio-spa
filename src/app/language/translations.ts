@@ -15,6 +15,9 @@ export const translations: { [key: string]: Translation } = {
     myExperience: 'My Experience',
     messageSent: 'Message sent!, OK!',
     requiredFields: 'Please fill out all required fields correctly.',
+    myCompetency: 'My Competency',
+    myProjects: 'My Projects',
+    myEducation: 'My Education',
   },
   de: {
     resume: 'Lebenslauf',
@@ -28,6 +31,9 @@ export const translations: { [key: string]: Translation } = {
     myExperience: 'Meine Erfahrung',
     messageSent: 'Nachricht gesendet!, OK!',
     requiredFields: 'Bitte füllen Sie alle erforderlichen Felder korrekt aus.',
+    myCompetency: 'Meine Kompetenz',
+    myProjects: 'Meine Projekte',
+    myEducation: 'Meine Ausbildung',
   },
   ge: {
     resume: 'რეზიუმე',
@@ -41,5 +47,8 @@ export const translations: { [key: string]: Translation } = {
     myExperience: 'ჩემი გამოცდილება',
     messageSent: 'მესიჯი გაიგზავნა! OK!',
     requiredFields: 'გთხოვთ, შეავსეთ ყველა საჭირო ველი სწორად.',
+    myCompetency: 'ჩემი უნარები',
+    myProjects: 'ჩემი პროექტები',
+    myEducation: 'ჩემი განათლება',
   },
 };
