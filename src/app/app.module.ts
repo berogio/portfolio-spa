@@ -17,9 +17,11 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { KontaktModalComponent } from './components/kontakt-modal/kontakt-modal.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { LoadingService } from './services/loading.service';
+import { LoadingInterceptor } from './loading-interceptor.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +48,14 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     BrowserAnimationsModule,
     MatSnackBarModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoadingInterceptor,
+      multi: true,
+    },
+    LoadingService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

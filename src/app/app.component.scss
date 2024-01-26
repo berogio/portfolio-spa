@@ -1,40 +1,74 @@
 app-header {
-    position: fixed;
-    width: 100%;
-    max-width: 1500px;
-    background-color: #ffffff;
-    opacity: 1;
-    z-index: 100;
+  position: fixed;
+  width: 100%;
+  max-width: 1500px;
+  background-color: #ffffff;
+  opacity: 1;
+  z-index: 100;
 }
 
 .fixed-bottom-right {
-    position: fixed;
-    bottom: 20px;
-    right: 15px;
+  position: fixed;
+  bottom: 20px;
+  right: 15px;
 }
 
 .larger-icon-button {
-    width: 70px;
-    height: 70px;
-    mat-icon {
-        transform: scale(1.5);
-    }
+  width: 70px;
+  height: 70px;
+  mat-icon {
+    transform: scale(1.5);
+  }
 }
 
 .mat-primary {
-    background-color: #3498db;
+  background-color: #3498db;
 }
 
 main {
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    max-width: 1500px;
-    margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.93);
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  max-width: 1500px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.93);
 }
 
 @media screen and (max-width: 768px) {
-    app-header {
-        width: 100%;
-    }
+  app-header {
+    width: 100%;
+  }
+}
+
+.loading-wrappe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 4px solid #ccc;
+  border-top-color: #000000;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
