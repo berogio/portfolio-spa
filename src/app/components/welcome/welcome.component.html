@@ -1,9 +1,9 @@
-<div class="welcome-wrapper" *ngIf="welcomeData">
-    <p class="greeting">{{ welcomeData.greeting }}</p>
-    <p class="about-header">{{ welcomeData.aboutHeader }}</p>
-    <p class="about-description">{{ welcomeData.aboutDescription }}</p>
-    <p class="about-footer">{{ welcomeData.aboutFooter }}</p>
+<div class="welcome-wrapper" *ngFor="let data of welcomeData$ | async">
+    <p class="greeting">{{ data.greeting }}</p>
+    <p class="about-header">{{ data.aboutHeader }}</p>
+    <p class="about-description">{{ data.aboutDescription }}</p>
+    <p class="about-footer">{{ data.aboutFooter }}</p>
     <div class="technologies">
-        <span *ngFor="let tech of welcomeData.technologies" [class]="tech.toLowerCase()">{{ tech }}</span>
+        <span *ngFor="let tech of data.technologies" [class]="tech.toLowerCase()">{{ tech }}</span>
     </div>
 </div>
