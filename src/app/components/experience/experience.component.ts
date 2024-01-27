@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 import { WorkExperience } from 'src/app/interfaces/interfaces';
 import { ServicesService } from 'src/app/services/services.service';
 import { TranslationService } from 'src/app/services/translation-service.service';
@@ -8,28 +9,16 @@ import { TranslationService } from 'src/app/services/translation-service.service
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss'],
 })
-export class ExperienceComponent implements OnInit {
-  experiences: WorkExperience[] = [];
+export class ExperienceComponent {
+  experiences$: Observable<WorkExperience[]>;
 
   constructor(
     private servicesService: ServicesService,
     private translationService: TranslationService
-  ) {}
-
-  ngOnInit(): void {
-    this.loadExperiences();
+  ) {
+    this.experiences$ = this.servicesService.getAllExperiences();
   }
 
-  loadExperiences() {
-    this.servicesService.getAllExperiences().subscribe({
-      next: (data: WorkExperience[]) => {
-        this.experiences = data;
-      },
-      error: (error) => {
-        console.error('Error loading experiences:', error);
-      },
-    });
-  }
   getExperience(): { prefix: string; suffix: string } {
     const experience = this.translationService.getTranslation('myExperience');
     const parts = experience.split(' ');
