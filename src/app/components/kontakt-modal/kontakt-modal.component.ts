@@ -48,7 +48,7 @@ export class KontaktModalComponent implements OnInit {
       });
     } else {
       this.snackBar.open(
-        'Please fill out all required fields correctly.',
+        this.translationService.getTranslation('requiredFields'),
         'OK',
         {
           duration: 3000,
