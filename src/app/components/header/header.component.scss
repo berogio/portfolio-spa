@@ -4,7 +4,7 @@ header {
   align-items: center;
   padding: 0 1%;
   height: 65px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.374);
+  border-bottom: 1px solid black;
   button {
     background-color: black;
     display: flex;
@@ -17,13 +17,13 @@ header {
     border-radius: 10px;
     font-size: larger;
     font-weight: 500;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.154);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s ease;
     &:hover {
       transform: scale(1.02);
-      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.676);
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.7);
       cursor: pointer;
-      color: rgba(255, 255, 255, 0.849);
+      color: rgba(255, 255, 255, 0.8);
     }
   }
 }
@@ -78,7 +78,7 @@ header {
   height: 38px;
   border-radius: 10px;
   margin: 10px;
-  border: 0.1px rgba(0, 0, 0, 0.201) solid;
+  border: 0.2px rgba(0, 0, 0, 0.2) solid;
   .material-symbols-outlined {
     cursor: pointer;
     transition: transform 0.5s ease;
@@ -88,10 +88,10 @@ header {
     flex-direction: column;
     padding: 5px;
     background-color: #ffffff;
-    border-top: 5px solid rgb(0, 0, 0);
-    border-bottom: 5px solid rgb(0, 0, 0);
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
     position: absolute;
-    top: 70px;
+    top: 60px;
     left: 0;
     width: 100%;
     z-index: 1;

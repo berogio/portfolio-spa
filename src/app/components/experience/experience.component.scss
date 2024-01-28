@@ -24,11 +24,11 @@ section {
 }
 
 .experience {
-  box-shadow: 0 3px 15px rgba(255, 255, 255, 0.388);
-  border: 1px solid rgba(255, 255, 255, 0.426);
+  box-shadow: 0 3px 15px rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 10px;
   background-color: black;
-  color: rgba(255, 255, 255, 0.713);
+  color: rgba(255, 255, 255, 0.7);
   padding: 30px;
   margin-bottom: 65px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
@@ -53,5 +53,5 @@ section {
 }
 
 .experience:nth-child(3) {
-  background-color: rgba(255, 255, 255, 0.238);
+  background-color: rgb(54, 54, 54);
 }
