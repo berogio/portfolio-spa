@@ -87,9 +87,9 @@ header {
     display: flex;
     flex-direction: column;
     padding: 5px;
-    background-color: #462446fd;
-    border-top: 5px solid rgb(166, 118, 118);
-    border-bottom: 5px solid rgb(142, 97, 97);
+    background-color: #ffffff;
+    border-top: 5px solid rgb(0, 0, 0);
+    border-bottom: 5px solid rgb(0, 0, 0);
     position: absolute;
     top: 70px;
     left: 0;
@@ -106,15 +106,13 @@ header {
       justify-content: space-between;
       padding: 15px;
       text-decoration: none;
-      color: rgb(77, 152, 152);
       font-size: 1.2rem;
       position: relative;
       &:hover {
-        background-color: #555;
+        background-color: #00000020;
       }
       span {
         margin-left: 10px;
-        color: rgb(77, 152, 152);
       }
     }
   }
@@ -130,7 +128,7 @@ header {
 
 @keyframes slideIn {
   from {
-    transform: translateY(-120px);
+    transform: translateY(-250px);
   }
   to {
     transform: translateY(0);
