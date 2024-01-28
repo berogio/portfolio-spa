@@ -39,14 +39,14 @@ export class HeaderComponent implements AfterViewInit {
       routerLink: '/projects',
       section: 'my-projects',
       icon: 'material-symbols-outlined',
-      iconName: 'phone_enabled',
+      iconName: 'storage',
     },
     {
       label: '',
       routerLink: '/about',
       section: 'about',
       icon: 'material-symbols-outlined',
-      iconName: 'face',
+      iconName: 'info',
     },
   ];
 

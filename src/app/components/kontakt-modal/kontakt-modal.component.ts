@@ -48,7 +48,7 @@ export class KontaktModalComponent implements OnInit {
       });
     } else {
       this.snackBar.open(
-        this.translationService.getTranslation('requiredFields'),
+        'Please fill out all required fields correctly.',
         'OK',
         {
           duration: 3000,
@@ -88,5 +88,9 @@ export class KontaktModalComponent implements OnInit {
   }
   getMMinLength(): string {
     return this.translationService.getTranslation('messageMinLength');
+  }
+
+  getmessageSent(): string {
+    return this.translationService.getTranslation('messageSent');
   }
 }
