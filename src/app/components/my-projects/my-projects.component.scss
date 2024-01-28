@@ -1,26 +1,20 @@
+#my-projects {
+  background-color: black;
+  h2 {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    text-align: center;
+  }
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  background-color: black;
-}
-
-.header {
-  font-size: 1.8rem;
-  color: white;
-  background-color: black;
-  margin: 0;
-  padding: 30px;
-  text-align: center;
-  span {
-    font-weight: 100;
-    color: #e5eae77a;
-  }
 }
 
 .card {
-  background-color: black;
   flex: 0 0 calc(50% - 20px);
   margin: 10px;
   padding: 20px;
@@ -31,7 +25,6 @@
 
 .text {
   order: 1;
-  background-color: black;
   flex: 0 0 calc(50% - 20px);
   margin: 10px;
   padding: 20px;

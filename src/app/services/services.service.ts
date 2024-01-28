@@ -14,7 +14,7 @@ import {
   providedIn: 'root',
 })
 export class ServicesService {
-  private baseUrl = 'https://portfolio-api-production-6224.up.railway.app';
+  private baseUrl = 'http://localhost:3000';
   private endpoints: any = {
     experiences: '/experiences',
     projects: '/projects',
@@ -74,7 +74,7 @@ export class ServicesService {
     return this.http.post(url, data);
   }
 
-  postContact(data: any, language?: string): Observable<any> {
+  postContact(data: any): Observable<any> {
     return this.post('contact', data);
   }
 }

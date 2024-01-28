@@ -19,9 +19,7 @@ export class AboutComponent {
     this.About$ = this.servicesService.getAbout();
   }
 
-  getEducations(): { prefix: string; suffix: string } {
-    const experience = this.translationService.getTranslation('myEducation');
-    const parts = experience.split(' ');
-    return { prefix: parts[0], suffix: parts[1] };
+  getEducations(): string {
+    return this.translationService.getTranslation('myEducation');
   }
 }

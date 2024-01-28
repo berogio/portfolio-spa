@@ -31,9 +31,7 @@ export class MyProjectsComponent implements OnInit {
     });
   }
 
-  getProject(): { prefix: string; suffix: string } {
-    const experience = this.translationService.getTranslation('myProjects');
-    const parts = experience.split(' ');
-    return { prefix: parts[0], suffix: parts[1] };
+  getProject(): string {
+    return this.translationService.getTranslation('myProjects');
   }
 }

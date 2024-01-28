@@ -19,9 +19,7 @@ export class ExperienceComponent {
     this.experiences$ = this.servicesService.getAllExperiences();
   }
 
-  getExperience(): { prefix: string; suffix: string } {
-    const experience = this.translationService.getTranslation('myExperience');
-    const parts = experience.split(' ');
-    return { prefix: parts[0], suffix: parts[1] };
+  getExperience(): string {
+    return this.translationService.getTranslation('myExperience');
   }
 }

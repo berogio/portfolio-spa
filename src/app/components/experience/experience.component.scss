@@ -1,13 +1,10 @@
-.header {
-  font-size: 1.8rem;
-  color: white;
+section {
   background-color: black;
-  margin: 0;
-  text-align: left;
-  span {
-    font-weight: 100;
-    color: #e5eae77a;
-  }
+  padding: 0px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header-wrapper {
@@ -20,15 +17,10 @@
     width: 60px;
     height: auto;
   }
-}
-
-section {
-  background-color: black;
-  padding: 0px 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  h2 {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: bold;
+  }
 }
 
 .experience {

@@ -25,9 +25,7 @@ export class SkillsComponent {
     this.isRotated[index] = !this.isRotated[index];
   }
 
-  getCompetency(): { prefix: string; suffix: string } {
-    const experience = this.translationService.getTranslation('myCompetency');
-    const parts = experience.split(' ');
-    return { prefix: parts[0], suffix: parts[1] };
+  getCompetency(): string {
+    return this.translationService.getTranslation('myCompetency');
   }
 }
