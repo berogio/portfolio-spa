@@ -1,6 +1,6 @@
 <section id="my-projects">
     <h2 class="header"><span>{{getProject().prefix}} </span>{{getProject().suffix}}</h2>
-    <div class="container" *ngIf="projects.length > 0">
+    <div class="container" *ngIf="projects">
         <div class="card">
             <img [src]="projects[0].image" alt="projects-img">
         </div>
@@ -13,7 +13,7 @@
             <ul>
                 <li *ngFor="let tech of projects[0].technologies">{{ tech }}</li>
             </ul>
-            <a [href]="projects[0].liveDemoLink">Check out the live demo of the Registration and Login System here.</a>
+            <a [href]="projects[0].liveDemoLink">Check out the live demo</a>
         </div>
 
         <div class="card">
@@ -28,7 +28,7 @@
             <ul>
                 <li *ngFor="let tech of projects[1].technologies">{{ tech }}</li>
             </ul>
-            <a [href]="projects[1].liveDemoLink">Check out the live demo of the Registration and Login System here.</a>
+            <a [href]="projects[1].liveDemoLink">Check out the live demo</a>
         </div>
         <div class="card">
             <img [src]="projects[2].image" alt="projects-img">
@@ -42,7 +42,7 @@
             <ul>
                 <li *ngFor="let tech of projects[2].technologies">{{ tech }}</li>
             </ul>
-            <a [href]="projects[2].liveDemoLink">Check out the live demo of the Registration and Login System here.</a>
+            <a [href]="projects[2].liveDemoLink">Check out the live demo</a>
         </div>
     </div>
 </section>
