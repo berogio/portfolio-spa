@@ -43,7 +43,6 @@ export class KontaktModalComponent implements OnInit {
         },
         error: (error) => {
           console.error(error);
-          console.error(error.error);
         },
       });
     } else {
@@ -51,7 +50,7 @@ export class KontaktModalComponent implements OnInit {
         this.translationService.getTranslation('requiredFields'),
         'OK',
         {
-          duration: 3000,
+          duration: 4000,
         }
       );
     }
@@ -67,7 +66,6 @@ export class KontaktModalComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  //translate service
   getCancel(): string {
     return this.translationService.getTranslation('cancel');
   }
