@@ -2,9 +2,9 @@ section {
   background-color: black;
   padding: 0px 30px;
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
 }
 
 .header-wrapper {
@@ -29,26 +29,30 @@ section {
   border-radius: 10px;
   background-color: black;
   color: rgba(255, 255, 255, 0.7);
-  padding: 30px;
+  padding: 15px 15px 25px;
   margin-bottom: 65px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  .s-wrapper {
-    display: flex;
-    color: white;
-    font-weight: bolder;
-    font-size: larger;
-    display: flex;
-    align-items: center;
-    img {
-      margin-right: 10px;
-      max-width: 3%;
-      height: auto;
-    }
+  p {
+    margin: 0;
   }
   .b-wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: 70px;
+  }
+  .s-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font-weight: bolder;
+    font-size: larger;
+    text-align: center;
+    img {
+      width: 35px;
+      margin-right: 0.5rem;
+      height: auto;
+    }
   }
 }
 
