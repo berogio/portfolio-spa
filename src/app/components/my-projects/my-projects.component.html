@@ -1,48 +1,22 @@
 <section id="my-projects">
-    <h2>{{getProject()}}</h2>
-    <div class="container" *ngIf="projects">
+    <h2>{{ getProject() }}</h2>
+    <ng-container *ngFor="let project of projects$ | async; let i=index">
         <div class="card">
-            <img [src]="projects[0].image" alt="projects-img">
+            <div class="image-container" [ngClass]="{'highlighted-img': i === 1}">
+                <img [src]="project.image" alt="projects-img">
+            </div>
+            <div class="text-container" [ngClass]="{'highlighted-text': i === 1}">
+                <div class="text">
+                    <h1>{{ project.title }}</h1>
+                    <p>{{ project.description }}</p>
+                    <p>{{ project.description2 }}</p>
+                    <p>Technologies Used:</p>
+                    <ul>
+                        <li *ngFor="let tech of project.technologies">{{ tech }}</li>
+                    </ul>
+                    <a [href]="project.liveDemoLink">Check out the live demo</a>
+                </div>
+            </div>
         </div>
-        <div class="text">
-            <h1>01</h1>
-            <h1>{{projects[0].title}}</h1>
-            <p>{{projects[0].description}}</p>
-            <p>{{projects[0].description2}}</p>
-            <p>Technologies Used:</p>
-            <ul>
-                <li *ngFor="let tech of projects[0].technologies">{{ tech }}</li>
-            </ul>
-            <a [href]="projects[0].liveDemoLink">Check out the live demo</a>
-        </div>
-
-        <div class="card">
-            <img [src]="projects[1].image" alt="projects-img">
-        </div>
-        <div class="text">
-            <h1>02</h1>
-            <h1>{{projects[1].title}}</h1>
-            <p>{{projects[1].description}}</p>
-            <p>{{projects[1].description2}}</p>
-            <p>Technologies Used:</p>
-            <ul>
-                <li *ngFor="let tech of projects[1].technologies">{{ tech }}</li>
-            </ul>
-            <a [href]="projects[1].liveDemoLink">Check out the live demo</a>
-        </div>
-        <div class="card">
-            <img [src]="projects[2].image" alt="projects-img">
-        </div>
-        <div class="text">
-            <h1>03</h1>
-            <h1>{{projects[2].title}}</h1>
-            <p>{{projects[2].description}}</p>
-            <p>{{projects[2].description2}}</p>
-            <p>Technologies Used:</p>
-            <ul>
-                <li *ngFor="let tech of projects[2].technologies">{{ tech }}</li>
-            </ul>
-            <a [href]="projects[2].liveDemoLink">Check out the live demo</a>
-        </div>
-    </div>
+    </ng-container>
 </section>

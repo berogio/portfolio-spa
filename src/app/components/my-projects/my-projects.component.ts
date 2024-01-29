@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Project } from 'src/app/interfaces/interfaces';
 import { ServicesService } from 'src/app/services/services.service';
 import { TranslationService } from 'src/app/services/translation-service.service';
@@ -8,27 +9,15 @@ import { TranslationService } from 'src/app/services/translation-service.service
   templateUrl: './my-projects.component.html',
   styleUrls: ['./my-projects.component.scss'],
 })
-export class MyProjectsComponent implements OnInit {
+export class MyProjectsComponent {
   projects: Project[] = [];
+  projects$!: Observable<Project[]>;
 
   constructor(
     private servicesService: ServicesService,
     private translationService: TranslationService
-  ) {}
-
-  ngOnInit(): void {
-    this.loadProjects();
-  }
-
-  loadProjects() {
-    this.servicesService.getProjects().subscribe({
-      next: (data: Project[]) => {
-        this.projects = data;
-      },
-      error: (error) => {
-        console.error('Error loading projects:', error);
-      },
-    });
+  ) {
+    this.projects$ = this.servicesService.getProjects();
   }
 
   getProject(): string {
