@@ -7,9 +7,10 @@ export interface NavLink {
 export interface WorkExperience {
   id: any;
   logo: string;
-  year: string;
   position: string;
+  year: string;
   description: string;
+  language: string;
 }
 
 export interface Project {
@@ -29,8 +30,8 @@ export interface Card {
   focusArea: string;
   additionalInfo1?: string;
   additionalInfo2?: string;
-  website?: string;
   notice?: string;
+  website?: string;
   language: string;
 }
 export interface Skills {
