@@ -28,10 +28,10 @@
   box-shadow: 0 10px 18px rgba(0, 0, 0, 0.6);
 }
 
-.card-img-top {
-  width: 35%;
-  height: auto;
-  object-fit: cover;
+.card-img {
+  width: 45%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .card-body {
