@@ -17,12 +17,11 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { KontaktModalComponent } from './components/modals/kontakt-modal/kontakt-modal.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { LoadingService } from './services/loading.service';
-import { LoadingInterceptor } from './loading-interceptor.service';
 import { PasswordModalComponent } from './components/modals/password-modal/password-modal.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,14 +49,7 @@ import { PasswordModalComponent } from './components/modals/password-modal/passw
     BrowserAnimationsModule,
     MatSnackBarModule,
   ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: LoadingInterceptor,
-      multi: true,
-    },
-    LoadingService,
-  ],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

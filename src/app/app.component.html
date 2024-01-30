@@ -12,9 +12,3 @@
 <button mat-fab color="primary" class="larger-icon-button fixed-bottom-right" (click)="openContactFormDialog()" aria-label="Kontaktformular öffnen">
     <mat-icon>outgoing_mail</mat-icon>
 </button>
-<div class="loading-overlay" *ngIf="loadingService.loading$ | async">
-    <div class="loading-wrapper">
-        <div class="spinner"></div>
-        <p>Loading...</p>
-    </div>
-</div>

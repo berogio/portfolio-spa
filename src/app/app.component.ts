@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { KontaktModalComponent } from './components/modals/kontakt-modal/kontakt-modal.component';
-import { LoadingService } from './services/loading.service';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +8,7 @@ import { LoadingService } from './services/loading.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  constructor(
-    public dialog: MatDialog,
-    public loadingService: LoadingService
-  ) {}
+  constructor(public dialog: MatDialog) {}
 
   openContactFormDialog(): void {
     const dialogRef = this.dialog.open(KontaktModalComponent, {
