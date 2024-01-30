@@ -22,6 +22,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LoadingService } from './services/loading.service';
 import { LoadingInterceptor } from './loading-interceptor.service';
+import { PasswordModalComponent } from './components/password-modal/password-modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { LoadingInterceptor } from './loading-interceptor.service';
     MyProjectsComponent,
     KontaktModalComponent,
     WelcomeComponent,
+    PasswordModalComponent,
   ],
   imports: [
     BrowserModule,

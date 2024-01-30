@@ -20,9 +20,5 @@ export class AppComponent {
       panelClass: 'custom-container',
       position: { bottom: '100px', right: '50px' },
     });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log('Dialog geschlossen');
-    });
   }
 }
