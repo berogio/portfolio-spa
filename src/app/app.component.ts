@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { KontaktModalComponent } from './components/kontakt-modal/kontakt-modal.component';
+import { KontaktModalComponent } from './components/modals/kontakt-modal/kontakt-modal.component';
 import { LoadingService } from './services/loading.service';
 
 @Component({

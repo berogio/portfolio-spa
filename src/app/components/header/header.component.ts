@@ -5,8 +5,7 @@ import { filter } from 'rxjs/operators';
 import { NavLink } from 'src/app/interfaces/interfaces';
 import { ServicesService } from 'src/app/services/services.service';
 import { TranslationService } from 'src/app/services/translation-service.service';
-import { KontaktModalComponent } from '../kontakt-modal/kontakt-modal.component';
-import { PasswordModalComponent } from '../password-modal/password-modal.component';
+import { PasswordModalComponent } from '../modals/password-modal/password-modal.component';
 
 @Component({
   selector: 'app-header',
