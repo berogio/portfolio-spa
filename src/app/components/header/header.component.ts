@@ -1,9 +1,12 @@
 import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { NavLink } from 'src/app/interfaces/interfaces';
 import { ServicesService } from 'src/app/services/services.service';
 import { TranslationService } from 'src/app/services/translation-service.service';
+import { KontaktModalComponent } from '../kontakt-modal/kontakt-modal.component';
+import { PasswordModalComponent } from '../password-modal/password-modal.component';
 
 @Component({
   selector: 'app-header',
@@ -55,7 +58,8 @@ export class HeaderComponent implements AfterViewInit {
     private router: Router,
     private route: ActivatedRoute,
     private servicesService: ServicesService,
-    private translationService: TranslationService
+    private translationService: TranslationService,
+    public dialog: MatDialog
   ) {
     this.resumeText = this.translationService.getTranslation('resume');
   }
@@ -124,5 +128,12 @@ export class HeaderComponent implements AfterViewInit {
     this.isDropdownOpen = false;
     window.location.reload();
     localStorage.setItem('selectedLanguage', language.toLocaleLowerCase());
+  }
+
+  openDownloadFormDialog(): void {
+    this.dialog.open(PasswordModalComponent, {
+      width: '280px',
+      backdropClass: 'custom-backdrop',
+    });
   }
 }

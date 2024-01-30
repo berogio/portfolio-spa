@@ -9,7 +9,7 @@
         </ng-container>
     </div>
     <div class="lang-cv-wrapper">
-        <button class="action-button">{{resumeText}}<span class="material-symbols-outlined">download</span></button>
+        <button class="action-button" (click)="openDownloadFormDialog()">{{resumeText}}<span class="material-symbols-outlined">download</span></button>
         <div class="language-selection" (mouseenter)="openDropdown()" (mouseleave)="closeDropdown()">
             <div class="custom-select">
                 <div *ngIf="isDropdownOpen" class="dropdown-options">
