@@ -1,6 +1,6 @@
 #my-projects {
   background-color: black;
-  padding: 20px 0px 10px 0px;
+  padding: 20px 15px 10px 15px;
   h2 {
     color: rgba(255, 255, 255, 0.8);
     font-weight: bold;
@@ -10,6 +10,10 @@
 }
 
 .card {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4);
+  padding: 10px;
+  border-radius: 10px;
   display: flex;
   justify-content: space-around;
   flex-direction: row;
@@ -18,8 +22,6 @@
 }
 
 .text-container {
-  box-shadow: 0 3px 15px rgba(255, 255, 255, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 10px;
   display: inline-block;
   .text {
