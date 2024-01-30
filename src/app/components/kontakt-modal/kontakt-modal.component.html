@@ -23,6 +23,6 @@
     </form>
 </div>
 <div mat-dialog-actions>
-    <button mat-button (click)="closeDialog()">{{translations['cancelText']}}</button>
+    <button mat-button (click)="dialogRef.close()">{{ translations['cancelText'] }}</button>
     <button mat-button color="primary" (click)="submitForm()">{{translations['sendText']}}</button>
 </div>

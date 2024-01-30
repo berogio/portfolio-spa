@@ -16,12 +16,11 @@ import { PasswordModalComponent } from '../password-modal/password-modal.compone
 export class HeaderComponent implements AfterViewInit {
   @ViewChild('navbar', { static: true }) private navbar!: ElementRef;
   isMenuOpen = false;
+  isDropdownOpen = false;
   resumeText: string;
 
   selectedLanguage: string =
     localStorage.getItem('selectedLanguage')?.toLocaleUpperCase() || 'EN';
-
-  isDropdownOpen = false;
 
   navLinks = [
     {
@@ -62,13 +61,10 @@ export class HeaderComponent implements AfterViewInit {
     public dialog: MatDialog
   ) {
     this.resumeText = this.translationService.getTranslation('resume');
+    this.loadNavItems();
   }
 
-  ngOnInit(): void {
-    this.loadExperiences();
-  }
-
-  loadExperiences() {
+  loadNavItems() {
     this.servicesService.getNav().subscribe({
       next: (data: NavLink[]) => {
         this.navLinks.forEach((staticLink, index) => {
@@ -81,10 +77,6 @@ export class HeaderComponent implements AfterViewInit {
         console.error('Error loading navigation:', error);
       },
     });
-  }
-
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
   }
 
   ngAfterViewInit() {
@@ -110,18 +102,6 @@ export class HeaderComponent implements AfterViewInit {
         this.isMenuOpen = !this.isMenuOpen;
       }, 400);
     }
-  }
-
-  openDropdown() {
-    this.isDropdownOpen = true;
-  }
-
-  closeDropdown() {
-    this.isDropdownOpen = false;
-  }
-
-  toggleDropdown() {
-    this.isDropdownOpen = !this.isDropdownOpen;
   }
 
   selectLanguage(language: string) {

@@ -15,7 +15,7 @@ export class KontaktModalComponent implements OnInit {
   translations: { [key: string]: string } = {};
 
   constructor(
-    private dialogRef: MatDialogRef<KontaktModalComponent>,
+    public dialogRef: MatDialogRef<KontaktModalComponent>,
     private fb: FormBuilder,
     private servicesService: ServicesService,
     private snackBar: MatSnackBar,
@@ -73,8 +73,5 @@ export class KontaktModalComponent implements OnInit {
   }
   openEmail(emailAddress: string) {
     window.open(`mailto:${emailAddress}`, '_blank');
-  }
-  closeDialog(): void {
-    this.dialogRef.close();
   }
 }

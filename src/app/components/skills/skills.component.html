@@ -1,7 +1,7 @@
 <section id="skills">
-    <h2>{{competency}}</h2>
+    <h2>{{ competency }}</h2>
     <div class="flex-container">
-        <div class="flex-item" *ngFor="let skill of skills$ | async; let i = index" [class.rotated]="isRotated[i]" (click)="rotateDiv(i)">
+        <div class="flex-item" *ngFor="let skill of skills$ | async; let i = index" [class.rotated]="isRotated[i]" (click)="isRotated[i] = !isRotated[i]">
             <div class="front-text" [class.hidden]="isRotated[i]">
                 <img [src]="skill.icon" alt="{{ skill.name }}">
                 <p>{{ skill.name }}</p>
@@ -9,9 +9,7 @@
             <div class="back-text" [class.hidden]="!isRotated[i]">
                 <p class="rotated-text">{{ skill.description }}</p>
             </div>
-            <span class="material-symbols-outlined">
-                refresh
-            </span>
+            <span class="material-symbols-outlined">refresh</span>
         </div>
     </div>
 </section>
