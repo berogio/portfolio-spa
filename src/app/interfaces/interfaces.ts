@@ -12,6 +12,7 @@ export interface WorkExperience {
   year: string;
   description: string;
   language: string;
+  order: number;
 }
 
 export interface Project {
