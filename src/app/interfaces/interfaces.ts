@@ -2,6 +2,7 @@ export interface NavLink {
   id: any;
   language: string;
   label: string;
+  order: number;
 }
 
 export interface WorkExperience {
