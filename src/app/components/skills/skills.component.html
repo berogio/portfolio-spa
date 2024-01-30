@@ -1,5 +1,5 @@
 <section id="skills">
-    <h2>{{ getCompetency() }}</h2>
+    <h2>{{competency}}</h2>
     <div class="flex-container">
         <div class="flex-item" *ngFor="let skill of skills$ | async; let i = index" [class.rotated]="isRotated[i]" (click)="rotateDiv(i)">
             <div class="front-text" [class.hidden]="isRotated[i]">

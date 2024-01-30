@@ -12,13 +12,25 @@ import { TranslationService } from 'src/app/services/translation-service.service
 })
 export class KontaktModalComponent implements OnInit {
   contactForm!: FormGroup;
+  translations: { [key: string]: string } = {};
+
   constructor(
     private dialogRef: MatDialogRef<KontaktModalComponent>,
     private fb: FormBuilder,
     private servicesService: ServicesService,
     private snackBar: MatSnackBar,
     private translationService: TranslationService
-  ) {}
+  ) {
+    this.translations = {
+      cancelText: this.translationService.getTranslation('cancel'),
+      sendText: this.translationService.getTranslation('send'),
+      contactText: this.translationService.getTranslation('contact'),
+      emailReqText: this.translationService.getTranslation('emailRequired'),
+      emailInvText: this.translationService.getTranslation('emailInvalid'),
+      messageReqText: this.translationService.getTranslation('messageRequired'),
+      mesageMinText: this.translationService.getTranslation('messageMinLength'),
+    };
+  }
 
   ngOnInit() {
     this.contactForm = this.fb.group({
@@ -64,31 +76,5 @@ export class KontaktModalComponent implements OnInit {
   }
   closeDialog(): void {
     this.dialogRef.close();
-  }
-
-  getCancel(): string {
-    return this.translationService.getTranslation('cancel');
-  }
-  getSend(): string {
-    return this.translationService.getTranslation('send');
-  }
-  getContact(): string {
-    return this.translationService.getTranslation('contact');
-  }
-  getRequired(): string {
-    return this.translationService.getTranslation('emailRequired');
-  }
-  getInvalid(): string {
-    return this.translationService.getTranslation('emailInvalid');
-  }
-  getMRequired(): string {
-    return this.translationService.getTranslation('messageRequired');
-  }
-  getMMinLength(): string {
-    return this.translationService.getTranslation('messageMinLength');
-  }
-
-  getmessageSent(): string {
-    return this.translationService.getTranslation('messageSent');
   }
 }

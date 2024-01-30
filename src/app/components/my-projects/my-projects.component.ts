@@ -12,15 +12,13 @@ import { TranslationService } from 'src/app/services/translation-service.service
 export class MyProjectsComponent {
   projects: Project[] = [];
   projects$!: Observable<Project[]>;
+  projecText: string;
 
   constructor(
     private servicesService: ServicesService,
     private translationService: TranslationService
   ) {
     this.projects$ = this.servicesService.getProjects();
-  }
-
-  getProject(): string {
-    return this.translationService.getTranslation('myProjects');
+    this.projecText = this.translationService.getTranslation('myProjects');
   }
 }

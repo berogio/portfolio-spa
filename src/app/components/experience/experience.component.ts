@@ -11,15 +11,14 @@ import { TranslationService } from 'src/app/services/translation-service.service
 })
 export class ExperienceComponent {
   experiences$: Observable<WorkExperience[]>;
+  experienceText: string;
 
   constructor(
     private servicesService: ServicesService,
     private translationService: TranslationService
   ) {
     this.experiences$ = this.servicesService.getAllExperiences();
-  }
-
-  getExperience(): string {
-    return this.translationService.getTranslation('myExperience');
+    this.experienceText =
+      this.translationService.getTranslation('myExperience');
   }
 }

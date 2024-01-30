@@ -11,21 +11,19 @@ import { TranslationService } from 'src/app/services/translation-service.service
 })
 export class SkillsComponent {
   skills$!: Observable<Skills[]>;
+  competency: string;
 
   constructor(
     private servicesService: ServicesService,
     private translationService: TranslationService
   ) {
     this.skills$ = this.servicesService.getSkills();
+    this.competency = this.translationService.getTranslation('myCompetency');
   }
 
   isRotated: boolean[] = [];
 
   rotateDiv(index: number) {
     this.isRotated[index] = !this.isRotated[index];
-  }
-
-  getCompetency(): string {
-    return this.translationService.getTranslation('myCompetency');
   }
 }

@@ -1,18 +1,18 @@
 <h2 mat-dialog-title>
-    {{getContact()}}
+    {{ translations['contactText']}}
     <mat-icon class="custom-icon">email</mat-icon>
 </h2>
 <div mat-dialog-content class="custom-dialog-content">
     <form [formGroup]="contactForm">
         <mat-form-field class="custom-form-field">
             <input matInput placeholder="E-Mail" class="custom-input" formControlName="email">
-            <mat-error *ngIf="contactForm.get('email')?.hasError('required')">{{getRequired()}}</mat-error>
-            <mat-error *ngIf="contactForm.get('email')?.hasError('email')">{{getInvalid()}}</mat-error>
+            <mat-error *ngIf="contactForm.get('email')?.hasError('required')">{{translations['emailReqText']}}</mat-error>
+            <mat-error *ngIf="contactForm.get('email')?.hasError('email')">{{translations['emailInvText']}}</mat-error>
         </mat-form-field>
         <mat-form-field class="custom-form-field">
             <textarea matInput placeholder="Message" class="custom-input" rows="5" formControlName="message"></textarea>
-            <mat-error *ngIf="contactForm.get('message')?.hasError('required')">{{getMRequired()}}</mat-error>
-            <mat-error *ngIf="contactForm.get('message')?.hasError('minlength')">{{getMMinLength()}}</mat-error>
+            <mat-error *ngIf="contactForm.get('message')?.hasError('required')">{{translations['messageReqText']}}</mat-error>
+            <mat-error *ngIf="contactForm.get('message')?.hasError('minlength')">{{translations['mesageMinText']}}</mat-error>
         </mat-form-field>
         <div class="icon-container">
             <span class="you" (click)="redirectToExternalUrl('https://www.linkedin.com/in/giorgi-beridze-427902238/')"></span>
@@ -23,6 +23,6 @@
     </form>
 </div>
 <div mat-dialog-actions>
-    <button mat-button (click)="closeDialog()">{{getCancel()}}</button>
-    <button mat-button color="primary" (click)="submitForm()">{{getSend()}}</button>
+    <button mat-button (click)="closeDialog()">{{translations['cancelText']}}</button>
+    <button mat-button color="primary" (click)="submitForm()">{{translations['sendText']}}</button>
 </div>

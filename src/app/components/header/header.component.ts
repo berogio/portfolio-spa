@@ -13,6 +13,7 @@ import { TranslationService } from 'src/app/services/translation-service.service
 export class HeaderComponent implements AfterViewInit {
   @ViewChild('navbar', { static: true }) private navbar!: ElementRef;
   isMenuOpen = false;
+  resumeText: string;
 
   selectedLanguage: string =
     localStorage.getItem('selectedLanguage')?.toLocaleUpperCase() || 'EN';
@@ -55,11 +56,10 @@ export class HeaderComponent implements AfterViewInit {
     private route: ActivatedRoute,
     private servicesService: ServicesService,
     private translationService: TranslationService
-  ) {}
-
-  getResume(): string {
-    return this.translationService.getTranslation('resume');
+  ) {
+    this.resumeText = this.translationService.getTranslation('resume');
   }
+
   ngOnInit(): void {
     this.loadExperiences();
   }

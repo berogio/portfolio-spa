@@ -1,5 +1,5 @@
 <section id="my-projects">
-    <h2>{{ getProject() }}</h2>
+    <h2>{{projecText}}</h2>
     <ng-container *ngFor="let project of projects$ | async; let i=index">
         <div class="card">
             <div class="image-container" [ngClass]="{'highlighted-img': i === 1}">

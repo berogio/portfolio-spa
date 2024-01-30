@@ -11,15 +11,13 @@ import { TranslationService } from 'src/app/services/translation-service.service
 })
 export class AboutComponent {
   About$: Observable<Card[]>;
+  educationText: string;
 
   constructor(
     private servicesService: ServicesService,
     private translationService: TranslationService
   ) {
     this.About$ = this.servicesService.getAbout();
-  }
-
-  getEducations(): string {
-    return this.translationService.getTranslation('myEducation');
+    this.educationText = this.translationService.getTranslation('myEducation');
   }
 }

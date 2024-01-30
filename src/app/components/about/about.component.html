@@ -1,5 +1,5 @@
 <section id="about">
-    <h2>{{getEducations()}}</h2>
+    <h2>{{ educationText }}</h2>
     <div class="card-container">
         <div class="card" *ngFor="let card of About$ | async">
             <img [src]="card.imageUrl" [alt]="card.altText" class="card-img">
