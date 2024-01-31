@@ -11,7 +11,7 @@ import { TranslationService } from 'src/app/services/translation-service.service
 })
 export class MyProjectsComponent {
   projects: Project[] = [];
-  projects$!: Observable<Project[]>;
+  projects$: Observable<Project[]>;
   projecText: string;
 
   constructor(

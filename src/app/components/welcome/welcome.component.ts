@@ -9,7 +9,7 @@ import { ServicesService } from 'src/app/services/services.service';
   styleUrls: ['./welcome.component.scss'],
 })
 export class WelcomeComponent {
-  welcomeData$!: Observable<WelcomeData[]>;
+  welcomeData$: Observable<WelcomeData[]>;
 
   constructor(private servicesService: ServicesService) {
     this.welcomeData$ = this.servicesService.getWelcome();

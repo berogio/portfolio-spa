@@ -10,7 +10,7 @@ import { TranslationService } from 'src/app/services/translation-service.service
   styleUrls: ['./skills.component.scss'],
 })
 export class SkillsComponent {
-  skills$!: Observable<Skills[]>;
+  skills$: Observable<Skills[]>;
   competency: string;
   isRotated: boolean[] = [];
 
