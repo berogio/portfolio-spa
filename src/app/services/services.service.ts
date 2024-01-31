@@ -23,7 +23,6 @@ export class ServicesService {
     about: '/about',
     contact: '/contact',
     navigation: '/navigation',
-    resume: '/resume',
   };
 
   private language: any = localStorage.getItem('selectedLanguage') || 'en';
@@ -77,8 +76,5 @@ export class ServicesService {
 
   postContact(data: any): Observable<any> {
     return this.post('contact', data);
-  }
-  postResume(data: any): Observable<any> {
-    return this.post('resume', data);
   }
 }
