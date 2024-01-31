@@ -15,10 +15,10 @@
             <mat-error *ngIf="contactForm.get('message')?.hasError('minlength')">{{translations['mesageMinText']}}</mat-error>
         </mat-form-field>
         <div class="icon-container">
-            <span class="you" (click)="redirectToExternalUrl('https://www.linkedin.com/in/giorgi-beridze-427902238/')"></span>
-            <span class="git" (click)="redirectToExternalUrl('https://github.com/berogio/')"></span>
-            <span class="gmail" (click)="openEmail('gberi2012@agruni.edu.ge')"></span>
-            <span class="ins" (click)="redirectToExternalUrl('https://www.linkedin.com/in/giorgi-beridze-427902238/')"></span>
+            <a class="you" href="https://www.linkedin.com/in/giorgi-beridze-427902238/" target="_blank"></a>
+            <a class="git" href="https://github.com/berogio/" target="_blank"></a>
+            <a class="gmail" href="mailto:gberi2012@agruni.edu.ge" target="_blank"></a>
+            <a class="ins" href="https://www.linkedin.com/in/giorgi-beridze-427902238/" target="_blank"></a>
         </div>
     </form>
 </div>

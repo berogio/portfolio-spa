@@ -1,19 +1,17 @@
 footer {
-  padding: 0 2%;
-  height: 100px;
+  padding: 0 1%;
+  height: 90px;
+  display: flex;
   background-color: black;
   color: rgba(245, 245, 245, 0.8);
-  display: flex;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   .vector-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-width: 130px;
+    min-width: 120px;
     p {
       font-weight: 700;
       font-size: 1.2rem;
-      font-family: sans-serif;
     }
   }
   .footer-content {
@@ -21,14 +19,5 @@ footer {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-  }
-}
-
-@media (max-width: 1024px) {
-  .footer-content {
-    font-size: small;
-  }
-  .text-wrapper {
-    max-width: 150px;
   }
 }
