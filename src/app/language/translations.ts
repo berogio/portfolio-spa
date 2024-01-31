@@ -18,6 +18,9 @@ export const translations: { [key: string]: Translation } = {
     myCompetency: 'Competency',
     myProjects: 'My Projects',
     myEducation: 'Education',
+    confirmCode: 'Confirmation code',
+    codeReceived:
+      'To download the resume, you need the confirmation code received in your email.',
   },
   de: {
     resume: 'Lebenslauf',
@@ -34,6 +37,9 @@ export const translations: { [key: string]: Translation } = {
     myCompetency: 'Kompetenz',
     myProjects: 'Meine Projekte',
     myEducation: 'Ausbildung',
+    confirmCode: 'Bestätigungscode',
+    codeReceived:
+      'Um den Lebenslauf herunterzuladen, benötigen Sie den in der E-Mail erhaltenen Bestätigungscode',
   },
   ge: {
     resume: 'რეზიუმე',
@@ -50,5 +56,8 @@ export const translations: { [key: string]: Translation } = {
     myCompetency: 'უნარები',
     myProjects: 'ჩემი პროექტები',
     myEducation: 'განათლება',
+    confirmCode: 'დადასტურება',
+    codeReceived:
+      'რეზიუმეს ჩამოსატვირთად დაგჭირდებათ მეილში მიღებული დამადასტურებელი კოდი',
   },
 };
