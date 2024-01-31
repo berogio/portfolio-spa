@@ -16,13 +16,14 @@ import {
 export class ServicesService {
   private baseUrl = 'https://portfolio-api-production-6224.up.railway.app';
   private endpoints: any = {
+    welcome: '/welcome',
     experiences: '/experiences',
     projects: '/projects',
-    about: '/about',
     skills: '/skills',
+    about: '/about',
     contact: '/contact',
     navigation: '/navigation',
-    welcome: '/welcome',
+    resume: '/resume',
   };
 
   private language: any = localStorage.getItem('selectedLanguage') || 'en';
@@ -76,5 +77,8 @@ export class ServicesService {
 
   postContact(data: any): Observable<any> {
     return this.post('contact', data);
+  }
+  postResume(data: any): Observable<any> {
+    return this.post('resume', data);
   }
 }
