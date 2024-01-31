@@ -57,6 +57,7 @@ export interface Project {
   technologies: string[];
   image: string;
   liveDemoLink: string;
+  order: number;
 }
 
 export interface WelcomeData {
