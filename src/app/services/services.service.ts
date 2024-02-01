@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, catchError, map, tap } from 'rxjs';
 import {
   WorkExperience,
   Project,
@@ -49,13 +49,18 @@ export class ServicesService {
   private get(
     endpoint: string,
     language?: string,
-    responseType?: 'json' | 'blob'
+    responseType?: 'json' | 'blob' | 'arraybuffer',
+    headers?: HttpHeaders
   ): Observable<any> {
     const url = this.createUrl(endpoint, language);
     let options: any = {};
 
     if (responseType) {
       options.responseType = responseType;
+    }
+
+    if (headers) {
+      options.headers = headers;
     }
 
     return this.http.get(url, options);
@@ -98,15 +103,26 @@ export class ServicesService {
     return this.post('resume', data);
   }
 
-  getResumeWithToken(token: string): Observable<any> {
+  openResumeWithToken(token: string): Observable<void> {
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
     });
 
-    return this.http.get(`${this.baseUrl}/resume`, {
-      headers,
-      responseType: 'arraybuffer',
-    });
+    return this.get('resume', undefined, 'arraybuffer', headers).pipe(
+      catchError((error) => {
+        console.error('Error fetching resume:', error);
+        throw error;
+      }),
+      tap((resumeData: ArrayBuffer) => {
+        const blob = new Blob([resumeData], {
+          type: 'application/pdf',
+        });
+        const url = window.URL.createObjectURL(blob);
+        window.open(url, '_blank');
+        window.URL.revokeObjectURL(url); // Nur einmal erreichbar
+      }),
+      map(() => {})
+    );
   }
 }
