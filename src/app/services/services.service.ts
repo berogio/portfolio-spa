@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, catchError, throwError } from 'rxjs';
 import {
   WorkExperience,
   Project,
@@ -16,7 +16,7 @@ import {
   providedIn: 'root',
 })
 export class ServicesService {
-  private baseUrl = 'https://portfolio-api-production-6224.up.railway.app';
+  private baseUrl = 'http://localhost:3000';
 
   private language: any = localStorage.getItem('selectedLanguage') || 'en';
 
@@ -94,23 +94,22 @@ export class ServicesService {
     return this.post('contact', data);
   }
 
-  getResume(): Observable<Blob> {
-    return this.get('resume', undefined, 'blob');
-  }
-
-  OpenResume(): Observable<void> {
-    return new Observable<void>((observer) => {
-      this.getResume().subscribe((blob) => {
-        const blobUrl = window.URL.createObjectURL(blob);
-        window.open(blobUrl, '_blank');
-        window.URL.revokeObjectURL(blobUrl);
-        observer.next();
-        observer.complete();
-      });
-    });
-  }
-
   postPassword(data: Password): Observable<ResumeResponse> {
     return this.post('resume', data);
+  }
+
+  getResumeWithToken(token: string): Observable<any> {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    });
+
+    return this.http
+      .get(`${this.baseUrl}/resume`, { headers, responseType: 'arraybuffer' })
+      .pipe(catchError(this.handleError));
+  }
+  private handleError(error: any): Observable<never> {
+    console.error('An error occurred:', error);
+    return throwError('An error occurred. Please try again later.');
   }
 }

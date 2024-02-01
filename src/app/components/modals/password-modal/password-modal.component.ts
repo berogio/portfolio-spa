@@ -32,8 +32,24 @@ export class PasswordModalComponent {
     this.passwordForm.valueChanges.subscribe((formValue: Password) => {
       if (this.passwordForm.valid) {
         this.servicesService.postPassword(formValue).subscribe({
-          next: (res: ResumeResponse) =>
-            this.servicesService.OpenResume().subscribe(),
+          next: (res: ResumeResponse) => {
+            const token = res.token;
+
+            console.log('JWT Token:', token);
+            localStorage.setItem('token', token);
+
+            this.servicesService.getResumeWithToken(token).subscribe(
+              (resumeData: ArrayBuffer) => {
+                const blob = new Blob([resumeData], {
+                  type: 'application/pdf',
+                });
+                const url = window.URL.createObjectURL(blob);
+
+                window.open(url, '_blank');
+              },
+              (error) => console.error(error)
+            );
+          },
           error: (error) => console.error(error),
         });
       }
