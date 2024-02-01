@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
@@ -16,6 +17,7 @@ export class PasswordModalComponent {
   constructor(
     private translationService: TranslationService,
     private servicesService: ServicesService,
+    private http: HttpClient,
     private formBuilder: FormBuilder,
     public dialogRef: MatDialogRef<PasswordModalComponent>
   ) {
@@ -25,13 +27,21 @@ export class PasswordModalComponent {
     };
 
     this.passwordForm = this.formBuilder.group({
-      password: ['', Validators.required],
+      password: ['', Validators.minLength(5)],
     });
 
     this.passwordForm.valueChanges.subscribe((formValue) => {
       if (this.passwordForm.valid) {
-        console.log(formValue);
+        this.downloadResume();
       }
+    });
+  }
+
+  downloadResume() {
+    this.servicesService.getResume().subscribe((blob) => {
+      const blobUrl = window.URL.createObjectURL(blob);
+      window.open(blobUrl, '_blank');
+      window.URL.revokeObjectURL(blobUrl);
     });
   }
 }

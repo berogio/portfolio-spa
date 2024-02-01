@@ -14,7 +14,7 @@ import {
   providedIn: 'root',
 })
 export class ServicesService {
-  private baseUrl = 'https://portfolio-api-production-6224.up.railway.app';
+  private baseUrl = 'http://localhost:3000';
   private endpoints: any = {
     welcome: '/welcome',
     experiences: '/experiences',
@@ -23,6 +23,7 @@ export class ServicesService {
     about: '/about',
     contact: '/contact',
     navigation: '/navigation',
+    resume: '/resume',
   };
 
   private language: any = localStorage.getItem('selectedLanguage') || 'en';
@@ -40,9 +41,24 @@ export class ServicesService {
     }
   }
 
-  get(endpoint: string, language?: string): Observable<any> {
+  get(
+    endpoint: string,
+    language?: string,
+    responseType?: 'json' | 'blob'
+  ): Observable<any> {
     const url = this.createUrl(endpoint, language);
-    return this.http.get(url);
+    let options: any = {};
+
+    if (responseType) {
+      options.responseType = responseType;
+    }
+
+    return this.http.get(url, options);
+  }
+
+  post(endpoint: string, data: ContactFormData): Observable<any> {
+    const url = this.createUrl(endpoint);
+    return this.http.post(url, data);
   }
 
   getAllExperiences(language?: string): Observable<WorkExperience[]> {
@@ -69,12 +85,11 @@ export class ServicesService {
     return this.get('welcome', language);
   }
 
-  post(endpoint: string, data: ContactFormData): Observable<any> {
-    const url = this.createUrl(endpoint);
-    return this.http.post(url, data);
-  }
-
   postContact(data: any): Observable<any> {
     return this.post('contact', data);
+  }
+
+  getResume(): Observable<Blob> {
+    return this.get('resume', undefined, 'blob');
   }
 }
