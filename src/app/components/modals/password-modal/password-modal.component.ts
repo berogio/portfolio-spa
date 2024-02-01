@@ -13,6 +13,7 @@ import { TranslationService } from 'src/app/services/translation-service.service
 export class PasswordModalComponent {
   translations: { [key: string]: string } = {};
   passwordForm: FormGroup;
+  backendError: boolean = false; //wasashlelia
 
   constructor(
     private translationService: TranslationService,
@@ -37,7 +38,10 @@ export class PasswordModalComponent {
             localStorage.setItem('token', token);
             this.servicesService.openResumeWithToken(token).subscribe();
           },
-          error: (error) => console.error(error.error.message),
+          error: (error) => {
+            console.error(error.error.message);
+            this.backendError = true;
+          },
         });
       }
     });
