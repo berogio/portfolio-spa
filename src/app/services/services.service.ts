@@ -120,7 +120,7 @@ export class ServicesService {
         });
         const url = window.URL.createObjectURL(blob);
         window.open(url, '_blank');
-        window.URL.revokeObjectURL(url); // Nur einmal erreichbar
+        // window.URL.revokeObjectURL(url); // Nur einmal erreichbar telefonze ar mushaobs
       }),
       map(() => {})
     );
