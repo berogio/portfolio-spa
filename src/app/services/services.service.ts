@@ -119,8 +119,8 @@ export class ServicesService {
           type: 'application/pdf',
         });
         const url = window.URL.createObjectURL(blob);
-        window.open(url, '_blank');
-        // window.URL.revokeObjectURL(url); // Nur einmal erreichbar telefonze ar mushaobs
+        window.open(url);
+        window.URL.revokeObjectURL(url); // Nur einmal erreichbar telefonze ar mushaobs
       }),
       map(() => {})
     );
