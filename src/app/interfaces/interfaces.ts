@@ -69,3 +69,10 @@ export interface WelcomeData {
   aboutFooter: string;
   technologies: string[];
 }
+export interface Password {
+  password: string;
+}
+export interface ResumeResponse {
+  token: string;
+  message: string;
+}

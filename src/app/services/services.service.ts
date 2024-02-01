@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {
   WorkExperience,
@@ -8,6 +8,8 @@ import {
   Skills,
   ContactFormData,
   WelcomeData,
+  Password,
+  ResumeResponse,
 } from '../interfaces/interfaces';
 
 @Injectable({
@@ -15,6 +17,9 @@ import {
 })
 export class ServicesService {
   private baseUrl = 'https://portfolio-api-production-6224.up.railway.app';
+
+  private language: any = localStorage.getItem('selectedLanguage') || 'en';
+
   private endpoints: any = {
     welcome: '/welcome',
     experiences: '/experiences',
@@ -26,22 +31,22 @@ export class ServicesService {
     resume: '/resume',
   };
 
-  private language: any = localStorage.getItem('selectedLanguage') || 'en';
-
   constructor(private http: HttpClient) {}
 
   private createUrl(endpoint: string, language?: string): string {
     const endpointUrl = this.endpoints[endpoint];
     const lang = language || this.language;
-    const languageParam = `?language=${lang}`;
+    const languageParam = lang ? `?language=${lang}` : '';
+    const urlWithoutLanguage = `${this.baseUrl}${endpointUrl}`;
+
     if (endpointUrl) {
-      return `${this.baseUrl}${endpointUrl}${languageParam}`;
+      return `${urlWithoutLanguage}${languageParam}`;
     } else {
       throw new Error(`Invalid endpoint: ${endpoint}`);
     }
   }
 
-  get(
+  private get(
     endpoint: string,
     language?: string,
     responseType?: 'json' | 'blob'
@@ -56,7 +61,7 @@ export class ServicesService {
     return this.http.get(url, options);
   }
 
-  post(endpoint: string, data: ContactFormData): Observable<any> {
+  private post(endpoint: string, data: any): Observable<any> {
     const url = this.createUrl(endpoint);
     return this.http.post(url, data);
   }
@@ -85,11 +90,23 @@ export class ServicesService {
     return this.get('welcome', language);
   }
 
-  postContact(data: any): Observable<any> {
+  postContact(data: ContactFormData): Observable<any> {
     return this.post('contact', data);
   }
 
-  getResume(): Observable<Blob> {
-    return this.get('resume', undefined, 'blob');
+  postPassword(data: Password): Observable<ResumeResponse> {
+    return this.post('resume', data);
+  }
+
+  getResumeWithToken(token: string): Observable<any> {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    });
+
+    return this.http.get(`${this.baseUrl}/resume`, {
+      headers,
+      responseType: 'arraybuffer',
+    });
   }
 }
