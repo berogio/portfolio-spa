@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, catchError, throwError } from 'rxjs';
+import { Observable } from 'rxjs';
 import {
   WorkExperience,
   Project,
@@ -8,8 +8,8 @@ import {
   Skills,
   ContactFormData,
   WelcomeData,
-  ResumeResponse,
   Password,
+  ResumeResponse,
 } from '../interfaces/interfaces';
 
 @Injectable({
@@ -104,12 +104,9 @@ export class ServicesService {
       'Content-Type': 'application/json',
     });
 
-    return this.http
-      .get(`${this.baseUrl}/resume`, { headers, responseType: 'arraybuffer' })
-      .pipe(catchError(this.handleError));
-  }
-  private handleError(error: any): Observable<never> {
-    console.error('An error occurred:', error);
-    return throwError('An error occurred. Please try again later.');
+    return this.http.get(`${this.baseUrl}/resume`, {
+      headers,
+      responseType: 'arraybuffer',
+    });
   }
 }
