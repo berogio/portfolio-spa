@@ -29,7 +29,9 @@
                     <a routerLink="{{ link.routerLink }} " (click)="scrollToSection(link.section) ">
                    {{ link.label }}  <span [ngClass]="link.icon ">{{link.iconName}}</span>
                 </a>
+
                 </ng-container>
+                <a (click)="openDownloadFormDialog()">test</a>
             </div>
         </div>
     </div>
