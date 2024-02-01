@@ -98,6 +98,18 @@ export class ServicesService {
     return this.get('resume', undefined, 'blob');
   }
 
+  OpenResume(): Observable<void> {
+    return new Observable<void>((observer) => {
+      this.getResume().subscribe((blob) => {
+        const blobUrl = window.URL.createObjectURL(blob);
+        window.open(blobUrl, '_blank');
+        window.URL.revokeObjectURL(blobUrl);
+        observer.next();
+        observer.complete();
+      });
+    });
+  }
+
   postPassword(data: Password): Observable<ResumeResponse> {
     return this.post('resume', data);
   }
