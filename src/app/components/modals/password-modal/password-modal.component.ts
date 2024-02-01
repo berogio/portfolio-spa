@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { Password, ResumeResponse } from 'src/app/interfaces/interfaces';
 import { ServicesService } from 'src/app/services/services.service';
 import { TranslationService } from 'src/app/services/translation-service.service';
 
@@ -17,7 +18,6 @@ export class PasswordModalComponent {
   constructor(
     private translationService: TranslationService,
     private servicesService: ServicesService,
-    private http: HttpClient,
     private formBuilder: FormBuilder,
     public dialogRef: MatDialogRef<PasswordModalComponent>
   ) {
@@ -30,9 +30,16 @@ export class PasswordModalComponent {
       password: ['', Validators.minLength(5)],
     });
 
-    this.passwordForm.valueChanges.subscribe((formValue) => {
+    this.passwordForm.valueChanges.subscribe((formValue: Password) => {
       if (this.passwordForm.valid) {
-        this.downloadResume();
+        this.servicesService.postPassword(formValue).subscribe({
+          next: (response: ResumeResponse) => {
+            console.log(response.message);
+          },
+          error: (error) => {
+            console.error(error);
+          },
+        });
       }
     });
   }

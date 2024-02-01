@@ -69,3 +69,9 @@ export interface WelcomeData {
   aboutFooter: string;
   technologies: string[];
 }
+export interface Password {
+  password: string;
+}
+export interface ResumeResponse {
+  message: string;
+}
