@@ -11,7 +11,7 @@ export class AppComponent {
   constructor(public dialog: MatDialog) {}
 
   openContactFormDialog(): void {
-    const dialogRef = this.dialog.open(KontaktModalComponent, {
+    this.dialog.open(KontaktModalComponent, {
       width: '310px',
       panelClass: 'custom-container',
       position: { bottom: '100px', right: '50px' },
